@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 
-class Login extends Component {
-    render() {
-        return (
-            <div>
-                doyoung
-            </div>
-        );
-    }
+class LoginDoyoung extends Component {
+  render() {
+    return <div>Doyoung</div>;
+  }
 }
 
-export default Login;
+export default LoginDoyoung;

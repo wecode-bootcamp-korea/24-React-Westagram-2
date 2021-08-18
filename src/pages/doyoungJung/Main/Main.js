@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 
-class Main extends Component {
-    render() {
-        return (
-            <div>
-                doyoung
-            </div>
-        );
-    }
+class MainDoyoung extends Component {
+  render() {
+    return <div>Doyoung</div>;
+  }
 }
 
-export default Main;
+export default MainDoyoung;
