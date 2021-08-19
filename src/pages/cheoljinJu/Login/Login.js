@@ -5,17 +5,6 @@ import '../../../styles/reset.scss';
 import '../../../styles/common.scss';
 
 class LoginCheoljin extends Component {
-  idRef = React.createRef();
-  goToMain = () => {
-    const id = this.idRef.current.value;
-    if (id === '철진' || id === '영현') {
-      this.props.history.push('/main-cheoljin');
-    } else if (id === '동희' || id === '현재') {
-      this.props.history.push('/main-cheoljin');
-    } else {
-      alert('아이디가 틀렸습니다!');
-    }
-  };
   render() {
     return (
       <div className="login">
@@ -35,11 +24,7 @@ class LoginCheoljin extends Component {
               className="login-form__pw"
               aria-label="비밀번호"
             />
-            <button
-              type="button"
-              className="login-form__submit"
-              onClick={this.goToMain}
-            >
+            <button type="button" className="login-form__submit">
               로그인
             </button>
             <a href="/main" className="login-form__link">

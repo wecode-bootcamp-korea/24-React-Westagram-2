@@ -32,9 +32,14 @@
         font-size: 12px;
       }
 
+      button {
+        outline: none;
+        border: none;
+      }
+
       .login-form__submit {
         width: 268px;
-        margin: 8px 40px 70px;
+        margin: 8px 40px 100px;
         padding: 12px 8px 12px 8px;
         background-color: #b2dffc;
         border-radius: 4px;
