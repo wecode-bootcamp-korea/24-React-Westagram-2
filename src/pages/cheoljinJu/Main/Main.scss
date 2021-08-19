@@ -1,6 +1,9 @@
 .main-cheoljin {
   button {
     cursor: pointer;
+    background: transparent;
+    outline: none;
+    border: none;
   }
 
   .main {
@@ -84,10 +87,11 @@
                 margin-bottom: 8px;
 
                 .icon {
+                  margin-right: 12px;
                   cursor: pointer;
 
                   &:last-child {
-                    margin-left: 408px;
+                    margin-left: 380px;
                   }
                 }
               }
@@ -100,6 +104,7 @@
             margin-bottom: 4px;
 
             span:first-child {
+              margin-right: 8px;
               font-weight: bold;
               cursor: pointer;
 
@@ -117,7 +122,7 @@
             }
 
             .comment__heart {
-              right: 0;
+              right: 10px;
 
               .fas.fa-heart {
                 color: red;
@@ -127,6 +132,15 @@
 
           .feed__liked {
             margin-bottom: 8px;
+
+            strong {
+              margin: 0 6px 0 0;
+              font-weight: bold;
+
+              &:last-child {
+                margin-left: 6px;
+              }
+            }
           }
 
           .comment-box {
@@ -140,6 +154,7 @@
               width: 90%;
               height: 18px;
               margin: 4px 0;
+              border: none;
               overflow: hidden;
             }
 
