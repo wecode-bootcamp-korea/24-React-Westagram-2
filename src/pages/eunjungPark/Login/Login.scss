@@ -37,13 +37,21 @@ html {
           background-color: #fafafa;
         }
 
-        .login-btn {
+        .login-btn-no {
           margin: 20px auto 80px;
           width: 100%;
           height: 40px;
           background-color: #c4e1fb;
           color: #ffffff;
-          border: none;
+          cursor: none;
+        }
+        .login-btn-yes {
+          margin: 20px auto 80px;
+          width: 100%;
+          height: 40px;
+          color: #ffffff;
+          background-color: #1c7ed6;
+          cursor: pointer;
         }
       }
       .foot-section {
