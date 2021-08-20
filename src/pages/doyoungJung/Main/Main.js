@@ -8,35 +8,7 @@ class MainDoyoung extends Component {
     return (
       <div>
         <body className="Main">
-          <nav className="navigation">
-            <div className="mainLogo">
-              <div className="logo">
-                <i class="fab fa-instagram"></i>
-              </div>
-              <div className="logoText">Westagram</div>
-            </div>
-            <div className="searchBar">
-              <i className="fas fa-search"></i>
-              <div>검색</div>
-            </div>
-            <div className="mainMenu">
-              <img
-                alt="See More"
-                src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
-              />
-              <div className="heart">
-                <img
-                  alt="Heart Icon"
-                  src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-                />
-                <div className="redDot"></div>
-              </div>
-              <img
-                alt="My Profile"
-                src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
-              />
-            </div>
-          </nav>
+          <nav></nav>
           <main>
             <div className="feedsList">
               <article className="firstFeed">
