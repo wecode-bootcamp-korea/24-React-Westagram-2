@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import './Main.scss';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
+import Nav from '../../../components/Nav/Nav';
 
 class MainDoyoung extends Component {
   render() {
     return (
       <div>
         <body className="Main">
-          <nav></nav>
           <main>
+            <Nav />
             <div className="feedsList">
               <article className="firstFeed">
                 <div className="feedUploader">
