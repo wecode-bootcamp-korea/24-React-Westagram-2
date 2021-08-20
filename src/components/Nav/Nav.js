@@ -21,21 +21,21 @@ class Nav extends Component {
           <div className="nav__menu">
             <a href="#">
               <img
-                src="/images/cheoljinJu/explore.png"
+                src="/images/Nav/explore.png"
                 alt="explore"
                 className="menu__item"
               />
             </a>
             <a href="#">
               <img
-                src="/images/cheoljinJu/heart.png"
+                src="/images/Nav/heart.png"
                 alt="liked content"
                 className="menu__item"
               />
             </a>
             <a href="#">
               <img
-                src="/images/cheoljinJu/profile.png"
+                src="/images/Nav/profile.png"
                 alt="profile"
                 className="menu__item profile"
               />
