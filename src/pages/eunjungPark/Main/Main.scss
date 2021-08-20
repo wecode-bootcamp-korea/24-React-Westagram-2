@@ -1,3 +1,48 @@
+@mixin img-style {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+}
+
+@mixin text-bold {
+  font-weight: bold;
+}
+
+// story, article section
+@mixin main-right-article {
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #efefef;
+  background-color: white;
+}
+
+@mixin feeds-bottom-imgStyle {
+  background: transparent;
+  width: 30px;
+}
+
+@mixin main-right-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+@mixin right-article {
+  margin-top: 10px;
+  height: 50px;
+  display: inline-flex;
+  align-items: center;
+}
+
+@mixin feeds-profile {
+  width: 100%;
+  height: 50px;
+  display: inline-flex;
+  align-items: center;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -17,313 +62,306 @@ body {
 .body-container {
   width: 950px;
   position: relative;
-}
 
-.nav {
-  width: 100%;
-  height: 80px;
-  background-color: white;
-  display: flex;
-  justify-content: space-around;
-  position: absolute;
-  padding: 20px;
-  border: 1px solid #efefef;
-}
+  .main {
+    width: 950px;
+    background-color: #fafafa;
+    display: inline-flex;
+    justify-content: space-between;
+    padding-top: 60px;
 
-.logo,
-.search-bar,
-.icon-container {
-  width: 240px;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-}
+    .feeds {
+      width: 600px;
+      padding-top: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-/* 상단 우측 아이콘, 로고 */
+      .article {
+        width: 580px;
+        background-color: white;
+        border: 1px solid #efefef;
 
-.logo {
-  justify-content: space-between;
-}
+        .title {
+          width: 100%;
+          height: 50px;
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 20px 0 20px;
 
-.search {
-  color: #dfdfdf;
-  z-index: 1;
-  margin-left: 5px;
-}
+          .title-left {
+            width: 150px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
 
-.logo > h1 {
-  font-family: 'Lobster', cursive;
-  font-weight: lighter;
-  font-size: 2em;
-}
+            .feeds-profile {
+              @include feeds-profile;
+              img {
+                @include img-style;
+              }
+            }
+            .user-id {
+              @include text-bold;
+            }
+          }
 
-/* 상단 가운데 검색창 */
-.search-bar {
-  padding: 0 auto;
-  font-size: 20px;
-  position: relative;
-}
+          .title-right {
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
 
-.search-bar > i {
-  position: absolute;
-  z-index: 1;
-  left: 30px;
-}
+        .feeds-image {
+          width: 550px;
+          height: 500px;
+          margin: 10px auto;
 
-.search-bar > input {
-  position: absolute;
-  padding: 0 30px;
-  border: 1px solid #dfdfdf;
-  background-color: #fafafa;
-  outline: none;
-  width: 90%;
-  height: 70%;
-}
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
 
-/* 상단 우측 아이콘 */
-.icon-container {
-  justify-content: space-between;
-  padding: 0 40px;
-}
+        .image-bottom {
+          width: 550px;
+          height: 30px;
+          margin: 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
 
-.icon-container > img {
-  background: transparent;
-  width: 27px;
-}
+          .feeds-icon {
+            width: 150px;
+            margin-left: 20px;
 
-/* main 요소 */
+            img {
+              @include feeds-bottom-imgStyle;
+            }
+          }
+          .bookmark {
+            img {
+              @include feeds-bottom-imgStyle;
+            }
+          }
+        }
 
-.main {
-  width: 950px;
-  background-color: #fafafa;
-  display: inline-flex;
-  justify-content: space-between;
-  padding-top: 60px;
-}
+        .comment-title {
+          width: 550px;
+          height: 30px;
+          margin: 0 auto;
+          display: inline-flex;
+          align-items: center;
 
-.feeds {
-  width: 600px;
-  padding-top: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+          .mine-profile {
+            display: inline-block;
 
-.article {
-  width: 580px;
-  background-color: white;
-  border: 1px solid #efefef;
-}
+            img {
+              width: 25px;
+              height: 25px;
+              border: none;
+              border-radius: 50%;
+              margin: 5px 10px 0 15px;
+            }
+          }
 
-/* 피드 상단*/
+          .comment-tit {
+            display: inline-block;
 
-.title {
-  width: 100%;
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px 0 20px;
-}
+            .user-id {
+              @include text-bold;
+            }
 
-.title-left {
-  width: 150px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10px;
-}
+            .bold {
+              @include text-bold;
 
-.feeds-profile {
-  width: 40px;
-  height: 40px;
-  border: none;
-}
+              .like-number {
+                @include text-bold;
+              }
+            }
+          }
+        }
 
-.feeds-profile img,
-.mine-profile img {
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: 50%;
-}
+        .art-comment {
+          width: 550px;
+          margin: 10px auto;
 
-.title-right {
-  width: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+          .comment-nth {
+            position: relative;
 
-/* 피드 이미지 */
+            .user-id {
+              @include text-bold;
+              margin-right: 5px;
+            }
 
-.feeds-image {
-  width: 550px;
-  height: 500px;
-  margin: 10px auto;
-}
+            .comment-like {
+              display: inline-block;
+              position: absolute;
+              right: 15px;
+            }
 
-.feeds-image img {
-  width: 100%;
-  height: 100%;
-}
+            .color-light {
+              color: #999999;
+              margin-left: 5px;
+            }
+          }
+        }
 
-/* 사진아래 아이콘 */
-.image-bottom {
-  width: 550px;
-  height: 30px;
-  margin: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+        .comment-plus {
+          width: 100%;
+          height: 35px;
+          margin: auto;
+          align-items: center;
+          display: flex;
+          justify-content: space-between;
+          background-color: white;
+          border: 1px solid #dfdfdf;
 
-.feeds-icon {
-  width: 150px;
-  margin-left: 20px;
-}
+          input {
+            width: 500px;
+            border: none;
+            outline: none;
+            margin-left: 20px;
+          }
 
-.feeds-icon > img,
-.bookmark > img {
-  background: transparent;
-  width: 30px;
-}
+          .comment-btn {
+            border: none;
+            outline: none;
+            color: #c8e3fc;
+            margin-right: 20px;
+            background-color: white;
+          }
+        }
+      }
+    }
+    // main-right
+    .main-right {
+      width: 350px;
+      padding-top: 50px;
 
-/* 댓글영역 */
+      .feeds-profile {
+        margin-top: 10px;
+        width: 100%;
+        height: 50px;
+        display: inline-flex;
+        align-items: center;
+        padding: 0 10px;
 
-.comment-title {
-  width: 550px;
-  height: 30px;
-  margin: 0 auto;
-  display: inline-flex;
-  align-items: center;
-}
+        div {
+          margin: 10px;
+          img {
+            @include img-style;
+          }
+        }
 
-.mine-profile {
-  display: inline-block;
-}
+        div {
+          .user-id {
+            @include text-bold;
+          }
 
-/* feed 이미지 하단 */
-.mine-profile > img {
-  width: 25px;
-  height: 25px;
-  border: none;
-  border-radius: 50%;
-  margin: 5px 10px 0 15px;
-}
+          .color-light {
+            color: #999999;
+          }
+        }
+      }
+      .story {
+        @include main-right-article;
 
-.comment-tit {
-  display: inline-block;
-}
-.user-id,
-.bold,
-.like-number {
-  font-weight: bold;
-}
+        .story-title {
+          @include main-right-title;
 
-.art-comment {
-  width: 550px;
-  margin: 10px auto;
-}
+          .color-light {
+            color: #999999;
+          }
+          .bold {
+            @include text-bold;
+          }
+        }
 
-.comment-nth {
-  position: relative;
-}
+        .story-main {
+          .right-article {
+            margin-top: 10px;
+            width: 100%;
+            height: 50px;
+            display: inline-flex;
+            align-items: center;
+            div {
+              margin: 10px;
+              img {
+                @include img-style;
+              }
+            }
+            div {
+              .user-id {
+                font-weight: bold;
+              }
+              .color-light {
+                color: #999999;
+              }
+            }
+          }
+        }
+      }
 
-.comment-like {
-  display: inline-block;
-  position: absolute;
-  right: 15px;
-}
+      .suggest {
+        @include main-right-article;
 
-/* 댓글 텍스트상자 */
-.comment-plus {
-  width: 100%;
-  height: 35px;
-  margin: auto;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  background-color: white;
-  border: 1px solid #dfdfdf;
-}
+        .suggest-title {
+          @include main-right-title;
 
-.comment-plus input {
-  width: 500px;
-  border: none;
-  outline: none;
-  margin-left: 20px;
-}
+          .color-light {
+            color: #999999;
+          }
+          .bold {
+            @include text-bold;
+          }
+        }
 
-.comment-btn {
-  border: none;
-  outline: none;
-  color: #c8e3fc;
-  margin-right: 20px;
-  background-color: white;
-}
+        .suggest-main {
+          .suggest-nth {
+            margin-top: 10px;
+            width: 100%;
+            height: 50px;
+            display: inline-flex;
+            align-items: center;
 
-.color-light {
-  color: #999999;
-}
-
-/* 오른쪽 친구목록 */
-.main-right {
-  width: 350px;
-  padding-top: 50px;
-}
-
-.feeds-profile {
-  width: 100%;
-  height: 50px;
-  display: inline-flex;
-  align-items: center;
-}
-
-.feeds-profile > div,
-.right-article > div {
-  margin: 10px;
-}
-
-.story,
-.suggest {
-  margin: 20px 0;
-  padding: 10px;
-  border: 1px solid #efefef;
-  background-color: white;
-}
-
-.story-title,
-.suggest-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10px;
-}
-
-.story-title > span,
-.suggest-title > span {
-  font-size: large;
-}
-
-.suggest-nth {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-right: 20px;
-}
-
-.suggest-nth > p {
-  color: #3a98f0;
-  font-weight: bold;
-}
-
-.right-article {
-  margin-top: 10px;
-  height: 50px;
-  display: inline-flex;
-  align-items: center;
-}
-
-.footer {
-  margin: 20px 0;
+            .right-article {
+              width: 80%;
+              height: 50px;
+              display: inline-flex;
+              align-items: center;
+              div {
+                margin: 10px;
+                img {
+                  @include img-style;
+                }
+              }
+              div {
+                .user-id {
+                  font-weight: bold;
+                }
+                .color-light {
+                  color: #999999;
+                }
+              }
+            }
+            .follow {
+              color: #3a98f0;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+      .footer {
+        margin: 20px 0;
+        color: #999999;
+      }
+      .color-light {
+        color: #999999;
+      }
+    }
+  }
 }

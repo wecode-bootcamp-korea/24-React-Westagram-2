@@ -11,35 +11,8 @@ class MainEunjung extends Component {
   render() {
     return (
       <div className="body-container">
-        <header className="nav">
-          <div className="logo">
-            <div className="instagram">
-              <FontAwesomeIcon icon={faInstagram} size="2x" />
-            </div>
-            <span>|</span>
-            <h1>Westagram</h1>
-          </div>
-          <div className="search-bar">
-            <div className="search">
-              <FontAwesomeIcon icon={faSearch} />
-            </div>
-            <input type="text" placeholder="검색" />
-          </div>
-          <div className="icon-container">
-            <img
-              alt="메뉴탐색"
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
-            />
-            <img
-              alt="하트"
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-            />
-            <img
-              alt="마이페이지"
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
-            />
-          </div>
-        </header>
+        {/* nav바 위치 */}
+
         <div className="main">
           <div className="feeds">
             <section className="article">
@@ -54,13 +27,11 @@ class MainEunjung extends Component {
                   <span className="user-id">eunJeong</span>
                 </div>
                 <div className="title-right">
-                  <div className="ellipsis-h">
-                    <FontAwesomeIcon icon={faEllipsisH} />
-                  </div>
+                  <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
                 </div>
               </header>
 
-              <article article="article" className="feeds-image">
+              <article className="feeds-image">
                 <img
                   alt="feeds-image"
                   src="./images/eunjungPark/feeds-image.png"
@@ -90,7 +61,7 @@ class MainEunjung extends Component {
                 </div>
               </article>
 
-              <article article="article" className="comment-title">
+              <article className="comment-title">
                 <div className="mine-profile">
                   <img
                     alt="mine-profile"
@@ -106,7 +77,7 @@ class MainEunjung extends Component {
                 </div>
               </article>
 
-              <footer footer="footer" className="art-comment">
+              <footer className="art-comment">
                 <div className="comment-nth">
                   <span className="user-id">eunJeong</span>
                   <span>수호가 라이언을 좋아하는구나..!</span>
@@ -165,7 +136,7 @@ class MainEunjung extends Component {
                 <span className="bold">모두 보기</span>
               </div>
               <div className="story-main">
-                <div className="feeds-profile right-article">
+                <div className="right-article">
                   <div>
                     <img
                       alt="feeds-profile"
@@ -177,7 +148,7 @@ class MainEunjung extends Component {
                     <p className="color-light">라이언 너무 좋아</p>
                   </div>
                 </div>
-                <div className="feeds-profile right-article">
+                <div className="right-article">
                   <div>
                     <img
                       alt="feeds-profile"
@@ -189,7 +160,7 @@ class MainEunjung extends Component {
                     <p className="color-light">라이언 너무 좋아</p>
                   </div>
                 </div>
-                <div className="feeds-profile right-article">
+                <div className="right-article">
                   <div>
                     <img
                       alt="feeds-profile"
@@ -212,7 +183,7 @@ class MainEunjung extends Component {
               </div>
               <div className="suggest-main">
                 <div className="suggest-nth">
-                  <div className="mine-profile right-article">
+                  <div className="right-article">
                     <div>
                       <img
                         alt="mine-profile"
@@ -224,10 +195,10 @@ class MainEunjung extends Component {
                       <p className="color-light">춘식이도 사랑해주세요</p>
                     </div>
                   </div>
-                  <p>팔로우</p>
+                  <p className="follow">팔로우</p>
                 </div>
                 <div className="suggest-nth">
-                  <div className="mine-profile right-article">
+                  <div className="right-article">
                     <div>
                       <img
                         alt="mine-profile"
@@ -239,10 +210,10 @@ class MainEunjung extends Component {
                       <p className="color-light">춘식이도 사랑해주세요</p>
                     </div>
                   </div>
-                  <p>팔로우</p>
+                  <p className="follow">팔로우</p>
                 </div>
                 <div className="suggest-nth">
-                  <div className="mine-profile right-article">
+                  <div className="right-article">
                     <div>
                       <img
                         alt="mine-profile"
@@ -254,12 +225,12 @@ class MainEunjung extends Component {
                       <p className="color-light">춘식이도 사랑해주세요</p>
                     </div>
                   </div>
-                  <p>팔로우</p>
+                  <p className="follow">팔로우</p>
                 </div>
               </div>
             </article>
 
-            <footer className="footer color-light">
+            <footer className="footer">
               westagram 정보 ・ 지원 ・ 홍보 센터 ・ API ・ 채용 정보 ・
               개인정보처리방침 ・ 약관 ・ 디렉토리 ・ 프로필 ・ 해시태그 ・ 언어
             </footer>
