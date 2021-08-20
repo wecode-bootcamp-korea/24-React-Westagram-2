@@ -1,0 +1,59 @@
+.Login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fafafa;
+  .loginPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 698px;
+    height: 700px;
+    margin-top: 30px;
+    border: 2px solid #e6e6e6;
+    background-color: #ffffff;
+    .logo {
+      font-family: 'Lobster', cursive;
+      font-size: 90px;
+    }
+    .loginSpace {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 255px;
+      .loginInformation {
+        width: 500px;
+        height: 75px;
+        padding-left: 15px;
+        background-color: #fafafa;
+        border: 2px solid #f3f3f3;
+        border-radius: 5px;
+        font-size: 23px;
+      }
+      .loginInformation::placeholder {
+        color: #a2a2a2;
+        font-weight: 500;
+      }
+      .loginBtn {
+        margin-top: 15px;
+        width: 500px;
+        height: 60px;
+        border: none;
+        border-radius: 8px;
+        background-color: #0385f7;
+        opacity: 0.2;
+        font-size: 25px;
+        font-weight: 500;
+        color: white;
+      }
+    }
+    .findPassword {
+      font-size: 23px;
+      font-weight: 500;
+      color: #043a6c;
+    }
+  }
+}
