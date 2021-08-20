@@ -16,7 +16,14 @@ class LoginCheoljin extends Component {
     this.setState(state);
   };
 
+  goToMain = () => {
+    this.props.history.push('/main-cheoljin');
+  };
+
   render() {
+    const { id, password } = this.state;
+    const isActive = id.includes('@') && password.length > 4 ? true : false;
+
     return (
       <div className="login">
         <div className="login-box">
@@ -36,7 +43,12 @@ class LoginCheoljin extends Component {
               aria-label="비밀번호"
               onChange={this.handleInput}
             />
-            <button type="button" className="login-form__submit">
+            <button
+              type="button"
+              className={`login-form__submit ${isActive ? 'active' : ''}`}
+              disabled={!isActive}
+              onClick={this.goToMain}
+            >
               로그인
             </button>
             <a href="/main" className="login-form__link">
