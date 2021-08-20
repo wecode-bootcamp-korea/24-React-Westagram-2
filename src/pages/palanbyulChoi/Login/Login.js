@@ -25,7 +25,11 @@ class LoginPalanbyul extends Component {
       ? this.setState({ backgroundColor: '#0095F6' })
       : this.setState({ backgroundColor: '#C4E1FB' });
   };
-
+  goToMain = () => {
+    if (this.state.backgroundColor === '#0095F6') {
+      this.props.history.push('/main-palanbyul');
+    }
+  };
   render() {
     return (
       <login>
@@ -54,6 +58,7 @@ class LoginPalanbyul extends Component {
               <button
                 className="login_btn"
                 style={{ backgroundColor: this.state.backgroundColor }}
+                onClick={this.goToMain}
               >
                 로그인
               </button>

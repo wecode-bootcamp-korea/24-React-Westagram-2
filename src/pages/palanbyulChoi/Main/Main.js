@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Main.scss';
-
+import Comment from './Comment';
 class MainPalanbyul extends Component {
   constructor(props) {
     super(props);
@@ -8,6 +8,7 @@ class MainPalanbyul extends Component {
       peedloveColor: 'black',
       peedloveClassName: 'far fa-heart',
       commentInput: '',
+      commentList: [],
     };
   }
 
@@ -24,16 +25,24 @@ class MainPalanbyul extends Component {
       });
     }
   };
-  writeComment = e => {
+  // 댓글쓰면 담기
+  getComment = e => {
     this.setState({ commentInput: e.target.value });
   };
-  enterComment = () => {};
+  // 댓글 엔터 누르면 배열에 담기
+  enterComment = () => {
+    this.setState({
+      commentList: this.state.commentList.concat(this.state.commentInput),
+      commentInput: '',
+    });
+  };
+
   render() {
     return (
       <div className="MainPalanbyul">
         <div className="nav">
           <div className="nav_logo">
-            <i class="fab fa-instagram" id="nav_logo_icon" />
+            <i className="fab fa-instagram" id="nav_logo_icon" />
             <div className="nav_logo_name">Westagram</div>
           </div>
           <div className="nav_search">
@@ -73,7 +82,7 @@ class MainPalanbyul extends Component {
                   <div className="username">code_bootcamp</div>
                 </div>
                 <div id="faEllipsis">
-                  <i class="fas fa-ellipsis-h" />
+                  <i className="fas fa-ellipsis-h" />
                 </div>
               </div>
               <div className="feed">
@@ -95,7 +104,7 @@ class MainPalanbyul extends Component {
                     <i className="far fa-paper-plane" />
                   </div>
                   <div id="bookmark">
-                    <i class="far fa-bookmark" />
+                    <i className="far fa-bookmark" />
                   </div>
                 </div>
                 <div className="feed_likes">
@@ -105,26 +114,7 @@ class MainPalanbyul extends Component {
                   <strong>wecode_bootcamp</strong> 안녕하세요
                   <br />
                 </div>
-                <div className="comment_box">
-                  <div className="comment">
-                    <div>
-                      <b>html</b> 멋져요🛶
-                    </div>
-                    <div>
-                      <i class="fas fa-times" id="commentOut" />
-                      <i class="far fa-heart" />
-                    </div>
-                  </div>
-                  <div className="comment">
-                    <div>
-                      <b>java</b> 이뻐요🚀
-                    </div>
-                    <div>
-                      <i class="fas fa-times" id="commentOut" />
-                      <i class="far fa-heart" />
-                    </div>
-                  </div>
-                </div>
+                <Comment list={this.state.commentList} />
                 <div className="feed_time">12분전</div>
               </div>
               <div className="comment_input_box">
@@ -133,7 +123,7 @@ class MainPalanbyul extends Component {
                   type="text"
                   placeholder="댓글 달기..."
                   value={this.state.commentInput}
-                  onChange={this.writeComment}
+                  onChange={this.getComment}
                 />
                 <span className="comment_enter" onClick={this.enterComment}>
                   게시
