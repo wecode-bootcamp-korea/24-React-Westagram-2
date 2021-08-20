@@ -12,6 +12,8 @@ class LoginCheoljin extends Component {
 
   handleInput = event => {
     const { className, value } = event.target;
+    const state = { ...this.state, [className]: value };
+    this.setState(state);
   };
 
   render() {
