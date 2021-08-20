@@ -10,16 +10,8 @@ class LoginCheoljin extends Component {
     password: '',
   };
 
-  handleInputId = event => {
-    const id = event.target.value;
-    const state = { ...this.state, id };
-    this.setState(state);
-  };
-
-  handleInputPassword = event => {
-    const password = event.target.value;
-    const state = { ...this.state, password };
-    this.setState(state);
+  handleInput = event => {
+    const { className, value } = event.target;
   };
 
   render() {
@@ -31,16 +23,16 @@ class LoginCheoljin extends Component {
             <input
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              className="login-form__id"
+              className="id"
               aria-label="전화번호, 사용자 이름 또는 이메일"
-              onChange={this.handleInputId}
+              onChange={this.handleInput}
             />
             <input
               type="password"
               placeholder="비밀번호"
-              className="login-form__pw"
+              className="password"
               aria-label="비밀번호"
-              onChange={this.handleInputPassword}
+              onChange={this.handleInput}
             />
             <button type="button" className="login-form__submit">
               로그인
