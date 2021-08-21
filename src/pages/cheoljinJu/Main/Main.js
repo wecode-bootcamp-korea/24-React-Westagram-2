@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Nav from '../../../components/Nav/Nav';
+import Comment from './comment/comment';
 import './Main.scss';
 
 class MainCheoljin extends Component {
@@ -14,10 +15,11 @@ class MainCheoljin extends Component {
 
   handleAdd = e => {
     e.preventDefault();
+    const { value } = this.inputRef.current;
     const comment = {
       id: Date.now(),
       userName: '24_Wecode',
-      comment: this.inputRef.current.value,
+      comment: value,
     };
     const comments = [...this.state.comments, comment];
     this.setState({ comments });
@@ -106,17 +108,9 @@ class MainCheoljin extends Component {
                         <strong>wecode__bootcamp</strong>님
                         <strong>외 10명</strong>이 좋아합니다
                       </p>
-                      {this.state.comments.map(reply => {
-                        return (
-                          <div className="feed__comment">
-                            <span>{reply.userName}</span>
-                            <span>{reply.comment}</span>
-                            <button type="button" className="comment__heart">
-                              <i className="far fa-heart"></i>
-                            </button>
-                          </div>
-                        );
-                      })}
+                      {this.state.comments.map(reply => (
+                        <Comment reply={reply} />
+                      ))}
                     </div>
                   </div>
                   <form className="comment-box" onSubmit={this.handleAdd}>

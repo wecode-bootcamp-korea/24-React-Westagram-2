@@ -98,38 +98,6 @@
             }
           }
 
-          .feed__comment {
-            position: relative;
-            height: 26px;
-            margin-bottom: 4px;
-
-            span:first-child {
-              margin-right: 8px;
-              font-weight: bold;
-              cursor: pointer;
-
-              &:hover {
-                text-decoration: underline;
-              }
-            }
-
-            button {
-              position: absolute;
-            }
-
-            .comment__delete {
-              right: 25px;
-            }
-
-            .comment__heart {
-              right: 10px;
-
-              .fas.fa-heart {
-                color: red;
-              }
-            }
-          }
-
           .feed__liked {
             margin-bottom: 8px;
 
