@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+
 import InputId from './LoginComponent/InputId';
 import InputPassword from './LoginComponent/InputPassword';
+import LoginButton from './LoginComponent/LoginButton';
 import './Login.scss';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
@@ -27,6 +28,7 @@ class LoginDoyoung extends Component {
       Password: event.target.value,
     });
   };
+
   render() {
     console.log(this.state);
     return (
@@ -37,11 +39,10 @@ class LoginDoyoung extends Component {
             <form className="loginSpace">
               <InputId handleInputID={this.handleInputID} />
               <InputPassword handleInputPassword={this.handleInputPassword} />
-              <Link to="/main-doyoung">
-                <button type="button" className="loginBtn">
-                  로그인
-                </button>
-              </Link>
+              <LoginButton
+                inputId={this.state.ID}
+                inputPassword={this.state.Password}
+              />
             </form>
             <div className="findPassword">비밀번호를 잊으셨나요?</div>
           </div>
