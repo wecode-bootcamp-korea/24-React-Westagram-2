@@ -1,27 +1,28 @@
 import React, { Component } from 'react';
 import './Main.scss';
-import Comment from './Comment';
+import Nav from '../../../components/Nav/Nav';
+import CommentList from './CommentList';
 class MainPalanbyul extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      peedloveColor: 'black',
-      peedloveClassName: 'far fa-heart',
+      peedLoveColor: 'black',
+      peedLoveClassName: 'far fa-heart',
       commentInput: '',
       commentList: [],
     };
   }
 
   changePeedLove = () => {
-    if (this.state.peedoveColor === 'black') {
+    if (this.state.peedLoveColor === 'black') {
       this.setState({
-        peedloveColor: 'rgb(237, 73, 86)',
-        peedloveClassName: 'fa fa-heart',
+        peedLoveColor: 'rgb(237, 73, 86)',
+        peedLoveClassName: 'fa fa-heart',
       });
     } else {
       this.setState({
-        peedloveColor: 'black',
-        peedloveClassName: 'far fa-heart',
+        peedLoveColor: 'black',
+        peedLoveClassName: 'far fa-heart',
       });
     }
   };
@@ -36,37 +37,10 @@ class MainPalanbyul extends Component {
       commentInput: '',
     });
   };
-
   render() {
     return (
       <div className="MainPalanbyul">
-        <div className="nav">
-          <div className="nav_logo">
-            <i className="fab fa-instagram" id="nav_logo_icon" />
-            <div className="nav_logo_name">Westagram</div>
-          </div>
-          <div className="nav_search">
-            <input placeholder="검색" />
-          </div>
-          <div className="nav_icons">
-            <img
-              alt="explore"
-              className="nav_icon"
-              src="/images/palanbyulChoi/explore.png"
-            />
-            <img
-              alt="my_profile"
-              className="nav_icon"
-              src="/images/palanbyulChoi/profile.png"
-              id="my_profile"
-            />
-            <img
-              alt="news"
-              className="nav_icon"
-              src="/images/palanbyulChoi/heart.png"
-            />
-          </div>
-        </div>
+        <Nav />
         <main>
           <div className="feeds">
             <div className="article">
@@ -79,7 +53,9 @@ class MainPalanbyul extends Component {
                       src="/images/palanbyulChoi/wecode.jpeg"
                     />
                   </div>
-                  <div className="username">code_bootcamp</div>
+                  <div className="username">
+                    <strong>wecode_bootcamp</strong>
+                  </div>
                 </div>
                 <div id="faEllipsis">
                   <i className="fas fa-ellipsis-h" />
@@ -96,8 +72,8 @@ class MainPalanbyul extends Component {
                 <div className="feed_icons">
                   <div>
                     <i
-                      className={this.state.peedloveClassName}
-                      style={{ color: this.state.peedloveColor }}
+                      className={this.state.peedLoveClassName}
+                      style={{ color: this.state.peedLoveColor }}
                       onClick={this.changePeedLove}
                     />
                     <i className="far fa-comment" />
@@ -108,13 +84,13 @@ class MainPalanbyul extends Component {
                   </div>
                 </div>
                 <div className="feed_likes">
-                  <strong>CSS</strong>님 외 3명이좋아합니다
+                  <strong>CSS</strong>님 <strong>외 3명</strong>이좋아합니다
                 </div>
                 <div className="feed_text">
                   <strong>wecode_bootcamp</strong> 안녕하세요
                   <br />
                 </div>
-                <Comment list={this.state.commentList} />
+                <CommentList list={this.state.commentList} />
                 <div className="feed_time">12분전</div>
               </div>
               <div className="comment_input_box">
@@ -160,7 +136,9 @@ class MainPalanbyul extends Component {
                       />
                     </div>
                     <div className="stoty_info">
-                      <div className="username">JAVA</div>
+                      <div className="username">
+                        <strong>JAVA</strong>
+                      </div>
                       <div className="feed_time">1분 전</div>
                     </div>
                   </div>
@@ -173,7 +151,9 @@ class MainPalanbyul extends Component {
                       />
                     </div>
                     <div className="stoty_info">
-                      <div className="username">HTML</div>
+                      <div className="username">
+                        <strong>HTML</strong>
+                      </div>
                       <div className="feed_time">48분 전</div>
                     </div>
                   </div>
@@ -186,7 +166,9 @@ class MainPalanbyul extends Component {
                       />
                     </div>
                     <div className="stoty_info">
-                      <div className="username">react</div>
+                      <div className="username">
+                        <strong>REACT</strong>
+                      </div>
                       <div className="feed_time">21분 전</div>
                     </div>
                   </div>
@@ -199,7 +181,9 @@ class MainPalanbyul extends Component {
                       />
                     </div>
                     <div className="stoty_info">
-                      <div className="username">code</div>
+                      <div className="username">
+                        <strong>CODE</strong>
+                      </div>
                       <div className="feed_time">42분 전</div>
                     </div>
                   </div>
@@ -212,7 +196,9 @@ class MainPalanbyul extends Component {
                       />
                     </div>
                     <div className="stoty_info">
-                      <div className="username">dsfnl2</div>
+                      <div className="username">
+                        <strong>CAD</strong>
+                      </div>
                       <div className="feed_time">24분 전</div>
                     </div>
                   </div>
@@ -225,7 +211,9 @@ class MainPalanbyul extends Component {
                       />
                     </div>
                     <div className="stoty_info">
-                      <div className="username">fds2</div>
+                      <div className="username">
+                        <strong>DOG</strong>
+                      </div>
                       <div className="feed_time">16분 전</div>
                     </div>
                   </div>
@@ -238,7 +226,9 @@ class MainPalanbyul extends Component {
                       />
                     </div>
                     <div className="stoty_info">
-                      <div className="username">wecoder</div>
+                      <div className="username">
+                        <strong>wecoder</strong>
+                      </div>
                       <div className="feed_time">10분 전</div>
                     </div>
                   </div>
@@ -260,7 +250,9 @@ class MainPalanbyul extends Component {
                     </div>
                     <div className="recommend_info">
                       <div>
-                        <div className="username">have</div>
+                        <div className="username">
+                          <strong>have</strong>
+                        </div>
                         <div className="feed_time">7명이 팔로우</div>
                       </div>
                       <div className="follow">팔로우</div>
@@ -276,7 +268,9 @@ class MainPalanbyul extends Component {
                     </div>
                     <div className="recommend_info">
                       <div>
-                        <div className="username">have</div>
+                        <div className="username">
+                          <strong>have</strong>
+                        </div>
                         <div className="feed_time">7명이 팔로우</div>
                       </div>
                       <div className="follow">팔로우</div>
@@ -292,7 +286,9 @@ class MainPalanbyul extends Component {
                     </div>
                     <div className="recommend_info">
                       <div>
-                        <div className="username">have</div>
+                        <div className="username">
+                          <strong>have</strong>
+                        </div>
                         <div className="feed_time">7명이 팔로우</div>
                       </div>
                       <div className="follow">팔로우</div>
@@ -308,7 +304,9 @@ class MainPalanbyul extends Component {
                     </div>
                     <div className="recommend_info">
                       <div>
-                        <div className="username">have</div>
+                        <div className="username">
+                          <strong>have</strong>
+                        </div>
                         <div className="feed_time">7명이 팔로우</div>
                       </div>
                       <div className="follow">팔로우</div>

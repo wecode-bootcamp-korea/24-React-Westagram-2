@@ -7,26 +7,26 @@ class LoginPalanbyul extends Component {
     this.state = {
       id: '',
       pw: '',
-      backgroundColor: '#C4E1FB',
-      disable: false,
+      loginBtnClassName: 'login_btn',
+      disabled: true,
     };
   }
-
+  activeLogin = () => {
+    this.state.id.indexOf('@') > 0 && this.state.pw.length >= 4
+      ? this.setState({ disabled: false })
+      : this.setState({ disabled: true });
+  };
   handleIdInput = e => {
     this.setState({ id: e.target.value });
-    this.state.id.indexOf('@') > 0 && this.state.pw.length >= 4
-      ? this.setState({ backgroundColor: '#0095F6' })
-      : this.setState({ backgroundColor: '#C4E1FB' });
+    this.activeLogin();
   };
 
   handlePwInput = e => {
     this.setState({ pw: e.target.value });
-    this.state.id.indexOf('@') > 0 && this.state.pw.length >= 4
-      ? this.setState({ backgroundColor: '#0095F6' })
-      : this.setState({ backgroundColor: '#C4E1FB' });
+    this.activeLogin();
   };
   goToMain = () => {
-    if (this.state.backgroundColor === '#0095F6') {
+    if (!this.state.disabled) {
       this.props.history.push('/main-palanbyul');
     }
   };
@@ -56,9 +56,9 @@ class LoginPalanbyul extends Component {
             </div>
             <div>
               <button
-                className="login_btn"
-                style={{ backgroundColor: this.state.backgroundColor }}
+                className={this.state.loginBtnClassName}
                 onClick={this.goToMain}
+                disabled={this.state.disabled}
               >
                 로그인
               </button>
