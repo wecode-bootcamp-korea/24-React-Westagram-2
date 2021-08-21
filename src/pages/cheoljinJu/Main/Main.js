@@ -22,8 +22,6 @@ class MainCheoljin extends Component {
     ],
   };
 
-  inputRef = React.createRef();
-
   handleAdd = value => {
     const comment = {
       id: Date.now(),
@@ -32,6 +30,11 @@ class MainCheoljin extends Component {
       isUser: true,
     };
     const comments = [...this.state.comments, comment];
+    this.setState({ comments });
+  };
+
+  handleDelete = reply => {
+    const comments = this.state.comments.filter(item => reply.id !== item.id);
     this.setState({ comments });
   };
 
@@ -119,7 +122,11 @@ class MainCheoljin extends Component {
                       </p>
                       <ul>
                         {this.state.comments.map(reply => (
-                          <Comment reply={reply} />
+                          <Comment
+                            key={reply.id}
+                            reply={reply}
+                            onDelete={this.handleDelete}
+                          />
                         ))}
                       </ul>
                     </div>
