@@ -110,31 +110,6 @@
               }
             }
           }
-
-          .comment-box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 16px;
-            border-top: 1px solid #dbdbdb;
-
-            .comment-input {
-              width: 90%;
-              height: 18px;
-              margin: 4px 0;
-              border: none;
-              overflow: hidden;
-            }
-
-            button {
-              color: #bfe0fd;
-              font-size: 14px;
-            }
-
-            button.active {
-              color: #0095f6;
-            }
-          }
         }
       }
 
