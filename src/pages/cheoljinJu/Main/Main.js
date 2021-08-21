@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
 import Nav from '../../../components/Nav/Nav';
-import Comment from './comment/comment';
+import Comment from './Comment/Comment';
 import './Main.scss';
 
 class MainCheoljin extends Component {
   state = {
     comments: [
-      { id: 1, userName: '24_Ted', comment: '거봐 좋았자나! ~~ 👀' },
-      { id: 2, userName: '24_candy', comment: '나도 여기 가보고 싶어!' },
+      {
+        id: 1,
+        userName: '24_Ted',
+        comment: '거봐 좋았자나! ~~ 👀',
+        isUser: false,
+      },
+      {
+        id: 2,
+        userName: '24_candy',
+        comment: '나도 여기 가보고 싶어!',
+        isUser: false,
+      },
     ],
   };
 
@@ -20,6 +30,7 @@ class MainCheoljin extends Component {
       id: Date.now(),
       userName: '24_Wecode',
       comment: value,
+      isUser: true,
     };
     const comments = [...this.state.comments, comment];
     this.setState({ comments });
@@ -108,9 +119,11 @@ class MainCheoljin extends Component {
                         <strong>wecode__bootcamp</strong>님
                         <strong>외 10명</strong>이 좋아합니다
                       </p>
-                      {this.state.comments.map(reply => (
-                        <Comment reply={reply} />
-                      ))}
+                      <ul>
+                        {this.state.comments.map(reply => (
+                          <Comment reply={reply} />
+                        ))}
+                      </ul>
                     </div>
                   </div>
                   <form className="comment-box" onSubmit={this.handleAdd}>

@@ -20,6 +20,10 @@
 
   .comment__delete {
     right: 40px;
+
+    .far.fa-trash-alt.none {
+      display: none;
+    }
   }
 
   .comment__heart {
