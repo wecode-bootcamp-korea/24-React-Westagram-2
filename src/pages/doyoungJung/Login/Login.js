@@ -1,27 +1,42 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import InputId from './LoginComponent/InputId';
+import InputPassword from './LoginComponent/InputPassword';
 import './Login.scss';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
 
 class LoginDoyoung extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      ID: '',
+      Password: '',
+    };
+  }
+
+  handleInputID = event => {
+    this.setState({
+      ID: event.target.value,
+    });
+  };
+
+  handleInputPassword = event => {
+    this.setState({
+      Password: event.target.value,
+    });
+  };
   render() {
+    console.log(this.state);
     return (
       <div>
         <main className="Login">
           <div className="loginPage">
             <h1 className="logo">Westagram</h1>
             <form className="loginSpace">
-              <input
-                className="loginId loginInformation"
-                type="text"
-                placeholder="전화번호, 사용자 이름 또는 이메일"
-              />
-              <input
-                className="loginPassword loginInformation"
-                type="password"
-                placeholder="비밀번호"
-              />
+              <InputId handleInputID={this.handleInputID} />
+              <InputPassword handleInputPassword={this.handleInputPassword} />
               <Link to="/main-doyoung">
                 <button type="button" className="loginBtn">
                   로그인
