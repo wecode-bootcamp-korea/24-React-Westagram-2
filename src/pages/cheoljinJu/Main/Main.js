@@ -3,6 +3,27 @@ import Nav from '../../../components/Nav/Nav';
 import './Main.scss';
 
 class MainCheoljin extends Component {
+  state = {
+    comments: [
+      { id: 1, userName: '24_Ted', comment: '거봐 좋았자나! ~~ 👀' },
+      { id: 2, userName: '24_candy', comment: '나도 여기 가보고 싶어!' },
+    ],
+  };
+
+  inputRef = React.createRef();
+
+  handleAdd = e => {
+    e.preventDefault();
+    const comment = {
+      id: Date.now(),
+      userName: '24_Wecode',
+      comment: this.inputRef.current.value,
+    };
+    const comments = [...this.state.comments, comment];
+    this.setState({ comments });
+    this.inputRef.current.value = '';
+  };
+
   render() {
     return (
       <div className="main-cheoljin">
@@ -85,33 +106,31 @@ class MainCheoljin extends Component {
                         <strong>wecode__bootcamp</strong>님
                         <strong>외 10명</strong>이 좋아합니다
                       </p>
-                      <div className="feed__comment">
-                        <span>24_Teddy</span>
-                        <span>거봐 좋았잖아~~~~👀</span>
-                        <button type="button" className="comment__heart">
-                          <i className="far fa-heart"></i>
-                        </button>
-                      </div>
-                      <div className="feed__comment">
-                        <span>24_Candy</span>
-                        <span>여기 어디야?</span>
-                        <button type="button" className="comment__heart">
-                          <i className="far fa-heart"></i>
-                        </button>
-                      </div>
+                      {this.state.comments.map(reply => {
+                        return (
+                          <div className="feed__comment">
+                            <span>{reply.userName}</span>
+                            <span>{reply.comment}</span>
+                            <button type="button" className="comment__heart">
+                              <i className="far fa-heart"></i>
+                            </button>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
-                  <div className="comment-box">
+                  <form className="comment-box" onSubmit={this.handleAdd}>
                     <input
                       type="text"
                       aria-label="댓글달기"
                       placeholder="댓글달기..."
                       className="comment-input"
+                      ref={this.inputRef}
                     />
-                    <button type="button" className="comment-button">
+                    <button type="submit" className="comment-button">
                       게시
                     </button>
-                  </div>
+                  </form>
                 </div>
               </article>
             </section>
