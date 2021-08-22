@@ -3,8 +3,36 @@ import './Main.scss';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
 import Nav from '../../../components/Nav/Nav';
+import InputText from './MainComponents/InputText';
+import InputReply from './MainComponents/InputReply';
 
 class MainDoyoung extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '',
+      Comments: [],
+    };
+  }
+
+  makeComment = event => {
+    this.setState({
+      value: event.target.value,
+    });
+  };
+
+  addComment = event => {
+    event.preventDefault();
+    if (this.state.value === '') {
+      alert('내용을 입력해주세요.');
+    } else {
+      this.setState({
+        Comments: this.state.Comments.concat(this.state.value),
+        value: '',
+      });
+    }
+  };
+
   render() {
     return (
       <div>
@@ -54,14 +82,12 @@ class MainDoyoung extends Component {
                   </li>
                 </ul>
                 <div className="grayReply">30분 전</div>
-                <form type="submit" className="addReply">
-                  <input
-                    className="inputText"
-                    type="text"
-                    placeholder="댓글 달기..."
-                  />
-                  <input className="inputBtn" type="submit" value="게시" />
-                </form>
+                <InputReply addedComments={this.state.Comments} />
+                <InputText
+                  makeComment={this.makeComment}
+                  clearInput={this.clearInput}
+                  addComment={this.addComment}
+                />
               </article>
             </div>
             <aside>
@@ -177,7 +203,7 @@ class MainDoyoung extends Component {
                   디렉터리﹒프로필﹒해시태그﹒언어
                   <br />
                 </div>
-                <div>ⓒ 2019 INSTAGRAM</div>
+                <div>ⓒ 2021 INSTAGRAM</div>
               </div>
             </aside>
           </main>

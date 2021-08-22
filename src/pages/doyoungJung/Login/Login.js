@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import InputId from './LoginComponent/InputId';
-import InputPassword from './LoginComponent/InputPassword';
-import LoginButton from './LoginComponent/LoginButton';
+import InputId from './LoginComponents/InputId';
+import InputPassword from './LoginComponents/InputPassword';
+import LoginButton from './LoginComponents/LoginButton';
 import './Login.scss';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
@@ -30,7 +30,6 @@ class LoginDoyoung extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <main className="Login">
