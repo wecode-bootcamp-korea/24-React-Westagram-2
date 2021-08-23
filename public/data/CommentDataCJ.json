@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "userName": "현재",
+    "comment": "안녕하세요!",
+    "isUser": false
+  },
+  {
+    "id": 2,
+    "userName": "동희",
+    "comment": "오히려 좋아",
+    "isUser": false
+  },
+  {
+    "id": 3,
+    "userName": "영현",
+    "comment": "동희님이 싫어요!",
+    "isUser": false
+  },
+  {
+    "id": 3,
+    "userName": "무현",
+    "comment": "저 인사 안하고 집에 갈거에요.",
+    "isUser": false
+  }
+]

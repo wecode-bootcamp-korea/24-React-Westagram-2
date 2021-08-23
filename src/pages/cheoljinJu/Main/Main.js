@@ -6,26 +6,25 @@ import './Main.scss';
 
 class MainCheoljin extends Component {
   state = {
-    comments: [
-      {
-        id: 1,
-        userName: '24_Ted',
-        comment: '거봐 좋았자나! ~~ 👀',
-        isUser: false,
-      },
-      {
-        id: 2,
-        userName: '24_candy',
-        comment: '나도 여기 가보고 싶어!',
-        isUser: false,
-      },
-    ],
+    comments: [],
+  };
+
+  componentDidMount = () => {
+    fetch('http://localhost:3002/data/CommentDataCJ.json', {
+      method: 'GET',
+    })
+      .then(result => result.json())
+      .then(comment => {
+        this.setState({
+          comments: comment,
+        });
+      });
   };
 
   handleAdd = value => {
     const comment = {
       id: Date.now(),
-      userName: '24_Wecode',
+      userName: '철진',
       comment: value,
       isUser: true,
     };
