@@ -3,8 +3,8 @@ import Comment from '../Comment/Comment';
 import CommentForm from '../CommentForm/CommentForm';
 
 class Feed extends Component {
-  handleAdd = value => {
-    this.props.onAdd(value);
+  handleAdd = (value, feed) => {
+    this.props.onAdd(value, feed);
   };
 
   handleDelete = reply => {
