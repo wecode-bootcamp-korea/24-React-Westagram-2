@@ -1,0 +1,22 @@
+[
+  {
+    "userName": "wecode_bootcamp",
+    "id": 1,
+    "src": "/images/palanbyulChoi/main.jpeg"
+  },
+  {
+    "userName": "CSS",
+    "id": 2,
+    "src": "/images/palanbyulChoi/main.jpeg"
+  },
+  {
+    "userName": "REACT",
+    "id": 3,
+    "src": "/images/palanbyulChoi/main.jpeg"
+  },
+  {
+    "userName": "JAVA",
+    "id": 4,
+    "src": "/images/palanbyulChoi/main.jpeg"
+  }
+]
