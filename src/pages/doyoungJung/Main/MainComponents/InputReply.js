@@ -5,8 +5,11 @@ class InputReply extends Component {
     return (
       <div>
         <li className="friendsReply">
-          <span className="friendsID">doyboy03</span>
-          <span>{this.props.value}</span>
+          <span className="friendsID">{this.props.name}</span>
+          <span>{this.props.comment}</span>
+          <span>
+            <i className="trashcan fas fa-trash-alt"></i>
+          </span>
         </li>
       </div>
     );

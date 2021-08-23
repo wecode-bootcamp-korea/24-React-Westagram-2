@@ -8,7 +8,14 @@
     font-weight: 700;
   }
 
-  .friendsReply:hover .trashCan {
+  .fa-trash-alt {
+    position: absolute;
+    right: 20px;
+    color: white;
+    font-size: 15px;
+  }
+
+  .friendsReply:hover .fa-trash-alt {
     color: #9b9b9b;
   }
 }

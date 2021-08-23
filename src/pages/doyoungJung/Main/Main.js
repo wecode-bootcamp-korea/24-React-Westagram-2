@@ -3,99 +3,66 @@ import './Main.scss';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
 import Nav from '../../../components/Nav/Nav';
-import InputReply from './MainComponents/InputReply';
+import InputFeed from './MainComponents/InputFeed';
 
 class MainDoyoung extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
-      Comments: [],
+      feedData: [],
     };
   }
 
-  makeComment = event => {
-    this.setState({
-      value: event.target.value,
-    });
-  };
-
-  addComment = event => {
-    event.preventDefault();
-    if (this.state.value === '') {
-      alert('내용을 입력해주세요.');
-    } else {
-      this.setState({
-        Comments: this.state.Comments.concat(this.state.value),
-        value: '',
+  componentDidMount() {
+    fetch('http://localhost:3000/data/feedData-Doyoung.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          feedData: data,
+        });
       });
-    }
-  };
+  }
 
   render() {
-    console.log(this.state.value);
-    console.log(this.state.comments);
+    const { feedData } = this.state;
+
     return (
       <body className="Main">
         <main>
           <Nav />
           <div className="feedsList">
-            <article className="firstFeed">
-              <div className="feedUploader">
-                <img
-                  className="UploaderPic"
-                  alt="Main Feed Uploader"
-                  src="../../../images/doyoungJung/profilepic.jpeg"
+            {feedData.map(data => {
+              return (
+                <InputFeed
+                  key={data.id}
+                  uploaderPic={data.uploaderPic}
+                  uploaderName={data.uploaderName}
+                  feedPic={data.feedPic}
+                  uploaderComment={data.uploaderComment}
+                  commentList={this.state.commentList}
+                  commentVlue={this.state.commentValue}
                 />
-                <div className="uploaderId">doyboy03</div>
-                <i className="fas fa-ellipsis-h"></i>
-              </div>
-              <div className="feedPic">
-                <img
-                  className="feedUploadedPic"
-                  alt="Main Feed"
-                  src="../../../images/doyoungJung/greenknight.jpeg"
-                />
-              </div>
-              <div className="feedFunction">
-                <div className="leftFeedFunction">
-                  <i className="fas fa-heart"></i>
-                  <i className="far fa-comment"></i>
-                  <i className="far fa-share-square"></i>
-                </div>
-                <i className="far fa-bookmark"></i>
-              </div>
-              <div className="feedCommunication">
-                <img
-                  className="feedCommunicationPic"
-                  alt="Like Icon"
-                  src="../../../images/doyoungJung/likeuser.jpeg"
-                />
-                <div className="likeComment">
-                  <span>challanfilm</span>님 <span>외 10명</span>이 좋아합니다
-                </div>
-              </div>
-              <ul className="feedReply">
-                <li className="myFeedReply">
-                  <span>doyboy03</span> 넘나 보고싶은 영화...
-                  <span>더 보기</span>
-                </li>
-              </ul>
-              <div className="grayReply">30분 전</div>
+              );
+            })}
 
-              {/* 입력한 댓글 */}
-              <ul>
-                {this.state.Comments.map((comment, index) => {
-                  return <InputReply key={index} value={comment} />;
+            {/* <ul>
+                {commentList.map(comment => {
+                  return (
+                    <InputReply
+                      key={comment.id}
+                      name={comment.userName}
+                      comment={comment.content}
+                    />
+                  );
                 })}
               </ul>
-              {/* 입력한 댓글 */}
 
-              {/* 댓글달기 */}
               <form type="submit" className="addReply">
                 <input
                   onChange={this.makeComment}
-                  value={this.state.value}
+                  value={commentValue}
                   className="inputText"
                   type="text"
                   placeholder="댓글 달기..."
@@ -103,9 +70,7 @@ class MainDoyoung extends Component {
                 <button onClick={this.addComment} className="inputBtn">
                   게시
                 </button>
-              </form>
-              {/* 댓글달기 */}
-            </article>
+              </form> */}
           </div>
           <aside>
             <div className="loginUser">
