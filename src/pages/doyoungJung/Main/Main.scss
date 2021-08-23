@@ -119,6 +119,21 @@
         color: #9b9b9b;
       }
 
+      .friendsReply {
+        position: relative;
+        margin-bottom: 5px;
+        padding-left: 15px;
+
+        .friendsID {
+          padding-right: 10px;
+          font-weight: 700;
+        }
+
+        .friendsReply:hover .trashCan {
+          color: #9b9b9b;
+        }
+      }
+
       .addReply {
         display: flex;
         justify-content: center;
