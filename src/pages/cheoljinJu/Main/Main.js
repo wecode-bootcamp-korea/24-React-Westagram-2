@@ -23,13 +23,12 @@ class MainCheoljin extends Component {
   handleAdd = value => {
     const comment = {
       id: Date.now(),
-      userName: '철진',
+      userName: '24_Wecode',
       comment: value,
       isUser: true,
     };
-    const comments = [...this.state.feeds[0].comments, comment];
-    const state = { ...this.state, feeds: [{ comments: comments }] };
-    this.setState(state);
+    const comments = [...this.state.comments, comment];
+    this.setState({ comments });
   };
 
   handleDelete = reply => {
@@ -47,6 +46,7 @@ class MainCheoljin extends Component {
               {this.state.feeds.map(feed => (
                 <Feed
                   key={feed.id}
+                  feed={feed}
                   comments={feed.comments}
                   onDelete={this.handleDelete}
                   onAdd={this.handleAdd}

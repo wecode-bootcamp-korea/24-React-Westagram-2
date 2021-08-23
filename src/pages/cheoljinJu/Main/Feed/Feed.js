@@ -3,8 +3,8 @@ import Comment from '../Comment/Comment';
 import CommentForm from '../CommentForm/CommentForm';
 
 class Feed extends Component {
-  handleAdd = reply => {
-    this.props.onAdd(reply);
+  handleAdd = value => {
+    this.props.onAdd(value);
   };
 
   handleDelete = reply => {
@@ -96,7 +96,7 @@ class Feed extends Component {
               </ul>
             </div>
           </div>
-          <CommentForm onAdd={this.handleAdd} />
+          <CommentForm onAdd={this.handleAdd} feed={this.props.feed} />
         </div>
       </article>
     );
