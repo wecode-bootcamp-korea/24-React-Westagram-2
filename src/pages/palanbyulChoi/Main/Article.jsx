@@ -8,6 +8,7 @@ class Article extends Component {
       commentList: [],
     };
   }
+
   componentDidMount() {
     fetch('http://localhost:3000/data/commentData.json', {
       method: 'GET', // GET method는 기본값이라서 생략이 가능합니다.
@@ -19,10 +20,11 @@ class Article extends Component {
         });
       });
   }
+
   getComment = e => {
     this.setState({ commentInput: e.target.value });
   };
-  // 댓글 마우스로 전송 누르면 배열에 담기
+
   enterComment = () => {
     this.setState({
       commentList: this.state.commentList.concat(this.state.commentInput),
@@ -30,6 +32,7 @@ class Article extends Component {
       commentCounter: this.state.commentCounter + 1,
     });
   };
+
   enter = e => {
     if (e.key === 'Enter')
       this.setState({
@@ -37,15 +40,17 @@ class Article extends Component {
         commentInput: '',
       });
   };
+
   render() {
     const {
       userName,
       className,
       peedLoveColor,
       changePeedLove,
-      commentLove,
+      commentLoveClassName,
       imgSrc,
     } = this.props;
+
     return (
       <div className="article">
         <div className="profile_box">
@@ -91,7 +96,7 @@ class Article extends Component {
             <br />
           </div>
           <CommentList
-            commentLove={commentLove}
+            commentLoveClassName={commentLoveClassName}
             commentList={this.state.commentList}
           />
           <div className="feed_time">12분전</div>

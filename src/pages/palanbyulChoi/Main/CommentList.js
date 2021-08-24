@@ -3,7 +3,7 @@ import './CommentList.scss';
 import Comment from './Comment';
 class CommentList extends Component {
   render() {
-    const { commentList, commentLove } = this.props;
+    const { commentList, commentLoveClassName } = this.props;
     return (
       <div className="comment_box">
         {commentList.map(comment => {
@@ -12,7 +12,7 @@ class CommentList extends Component {
               <Comment
                 userName={comment.userName}
                 comment={comment.comment}
-                commentLove={commentLove}
+                commentLoveClassName={commentLoveClassName}
               />
             </div>
           );

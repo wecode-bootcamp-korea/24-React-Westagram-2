@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './Main.scss';
 import Nav from '../../../components/Nav/Nav';
 import Article from './Article';
+import StoryPeed from './StoryPeed';
+import StoryData from './StotyData';
+import RecommendPeed from './RecommendPeed';
+import RecommendData from './RecommendData';
 class MainPalanbyul extends Component {
   constructor(props) {
     super(props);
@@ -12,6 +16,7 @@ class MainPalanbyul extends Component {
       feedList: [],
     };
   }
+
   componentDidMount() {
     fetch('http://localhost:3000/data/feedData.json', {
       method: 'GET', // GET method는 기본값이라서 생략이 가능합니다.
@@ -23,6 +28,7 @@ class MainPalanbyul extends Component {
         });
       });
   }
+
   changePeedLove = () => {
     if (this.state.peedLoveColor === 'black') {
       this.setState({
@@ -36,7 +42,6 @@ class MainPalanbyul extends Component {
       });
     }
   };
-  // 댓글쓰면 담기
 
   render() {
     const { peedLoveClassName, peedLoveColor, commentLoveClassName, feedList } =
@@ -80,111 +85,15 @@ class MainPalanbyul extends Component {
                   <div>모두보기</div>
                 </div>
                 <div className="story_peeds">
-                  <div className="story_peed">
-                    <div className="story_photo">
-                      <img
-                        alt="wecoder_photo"
-                        className="user_photo"
-                        src="/images/palanbyulChoi/wecode.jpeg"
+                  {StoryData.map(story => {
+                    return (
+                      <StoryPeed
+                        imgSrc={story.src}
+                        key={story.id}
+                        userName={story.userName}
                       />
-                    </div>
-                    <div className="stoty_info">
-                      <div className="username">
-                        <strong>JAVA</strong>
-                      </div>
-                      <div className="feed_time">1분 전</div>
-                    </div>
-                  </div>
-                  <div className="story_peed">
-                    <div className="story_photo">
-                      <img
-                        alt="wecoder_photo"
-                        className="user_photo"
-                        src="/images/palanbyulChoi/wecode.jpeg"
-                      />
-                    </div>
-                    <div className="stoty_info">
-                      <div className="username">
-                        <strong>HTML</strong>
-                      </div>
-                      <div className="feed_time">48분 전</div>
-                    </div>
-                  </div>
-                  <div className="story_peed">
-                    <div className="story_photo">
-                      <img
-                        alt="wecoder_photo"
-                        className="user_photo"
-                        src="/images/palanbyulChoi/wecode.jpeg"
-                      />
-                    </div>
-                    <div className="stoty_info">
-                      <div className="username">
-                        <strong>REACT</strong>
-                      </div>
-                      <div className="feed_time">21분 전</div>
-                    </div>
-                  </div>
-                  <div className="story_peed">
-                    <div className="story_photo">
-                      <img
-                        alt="wecoder_photo"
-                        className="user_photo"
-                        src="/images/palanbyulChoi/wecode.jpeg"
-                      />
-                    </div>
-                    <div className="stoty_info">
-                      <div className="username">
-                        <strong>CODE</strong>
-                      </div>
-                      <div className="feed_time">42분 전</div>
-                    </div>
-                  </div>
-                  <div className="story_peed">
-                    <div className="story_photo">
-                      <img
-                        alt="wecoder_photo"
-                        className="user_photo"
-                        src="/images/palanbyulChoi/wecode.jpeg"
-                      />
-                    </div>
-                    <div className="stoty_info">
-                      <div className="username">
-                        <strong>CAD</strong>
-                      </div>
-                      <div className="feed_time">24분 전</div>
-                    </div>
-                  </div>
-                  <div className="story_peed">
-                    <div className="story_photo">
-                      <img
-                        alt="wecoder_photo"
-                        className="user_photo"
-                        src="/images/palanbyulChoi/wecode.jpeg"
-                      />
-                    </div>
-                    <div className="stoty_info">
-                      <div className="username">
-                        <strong>DOG</strong>
-                      </div>
-                      <div className="feed_time">16분 전</div>
-                    </div>
-                  </div>
-                  <div className="story_peed">
-                    <div className="story_photo">
-                      <img
-                        alt="wecoder_photo"
-                        className="user_photo"
-                        src="/images/palanbyulChoi/wecode.jpeg"
-                      />
-                    </div>
-                    <div className="stoty_info">
-                      <div className="username">
-                        <strong>wecoder</strong>
-                      </div>
-                      <div className="feed_time">10분 전</div>
-                    </div>
-                  </div>
+                    );
+                  })}
                 </div>
               </div>
               <div className="recommend">
@@ -193,78 +102,15 @@ class MainPalanbyul extends Component {
                   <div>모두보기</div>
                 </div>
                 <div className="recommend_peeds">
-                  <div className="recommend_peed">
-                    <div className="recommend_photo">
-                      <img
-                        alt="wecoder_photo"
-                        src="/images/palanbyulChoi/wecode.jpeg"
-                        className="user_photo"
+                  {RecommendData.map(recommend => {
+                    return (
+                      <RecommendPeed
+                        imgSrc={recommend.src}
+                        key={recommend.id}
+                        userName={recommend.userName}
                       />
-                    </div>
-                    <div className="recommend_info">
-                      <div>
-                        <div className="username">
-                          <strong>have</strong>
-                        </div>
-                        <div className="feed_time">7명이 팔로우</div>
-                      </div>
-                      <div className="follow">팔로우</div>
-                    </div>
-                  </div>
-                  <div className="recommend_peed">
-                    <div className="recommend_photo">
-                      <img
-                        alt="wecoder_photo"
-                        src="/images/palanbyulChoi/wecode.jpeg"
-                        className="user_photo"
-                      />
-                    </div>
-                    <div className="recommend_info">
-                      <div>
-                        <div className="username">
-                          <strong>have</strong>
-                        </div>
-                        <div className="feed_time">7명이 팔로우</div>
-                      </div>
-                      <div className="follow">팔로우</div>
-                    </div>
-                  </div>
-                  <div className="recommend_peed">
-                    <div className="recommend_photo">
-                      <img
-                        alt="wecoder_photo"
-                        src="/images/palanbyulChoi/wecode.jpeg"
-                        className="user_photo"
-                      />
-                    </div>
-                    <div className="recommend_info">
-                      <div>
-                        <div className="username">
-                          <strong>have</strong>
-                        </div>
-                        <div className="feed_time">7명이 팔로우</div>
-                      </div>
-                      <div className="follow">팔로우</div>
-                    </div>
-                  </div>
-                  <div className="recommend_peed">
-                    <div className="recommend_photo">
-                      <img
-                        alt="wecoder_photo"
-                        src="/images/palanbyulChoi/wecode.jpeg"
-                        className="user_photo"
-                      />
-                    </div>
-                    <div className="recommend_info">
-                      <div>
-                        <div className="username">
-                          <strong>have</strong>
-                        </div>
-                        <div className="feed_time">7명이 팔로우</div>
-                      </div>
-                      <div className="follow">팔로우</div>
-                    </div>
-                  </div>
+                    );
+                  })}
                 </div>
               </div>
               <footer>
