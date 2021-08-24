@@ -7,8 +7,8 @@ class Feed extends Component {
     this.props.onAdd(value, feed);
   };
 
-  handleDelete = reply => {
-    this.props.onDelete(reply);
+  handleDelete = (reply, feed) => {
+    this.props.onDelete(reply, feed);
   };
 
   render() {
@@ -90,6 +90,7 @@ class Feed extends Component {
                   <Comment
                     key={reply.id}
                     reply={reply}
+                    feed={this.props.feed}
                     onDelete={this.handleDelete}
                   />
                 ))}

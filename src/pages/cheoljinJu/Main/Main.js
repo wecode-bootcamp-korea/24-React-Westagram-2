@@ -9,7 +9,7 @@ class MainCheoljin extends Component {
   };
 
   componentDidMount = () => {
-    fetch('http://localhost:3002/data/CommentDataCJ.json', {
+    fetch('http://localhost:3000/data/CommentDataCJ.json', {
       method: 'GET',
     })
       .then(result => result.json())
@@ -39,9 +39,17 @@ class MainCheoljin extends Component {
     this.setState({ feeds });
   };
 
-  handleDelete = reply => {
-    const comments = this.state.comments.filter(item => reply.id !== item.id);
-    this.setState({ comments });
+  handleDelete = (reply, feed) => {
+    const comments = feed.comments.filter(item => reply.id !== item.id);
+    const newFeed = { ...feed, comments };
+    const feeds = this.state.feeds.map(item => {
+      if (feed.id === item.id) {
+        return newFeed;
+      } else {
+        return item;
+      }
+    });
+    this.setState({ feeds });
   };
 
   render() {
