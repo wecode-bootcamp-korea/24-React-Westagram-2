@@ -3,6 +3,14 @@ import './Main.scss';
 import Nav from '../../../components/Nav/Nav';
 
 class MainEunjung extends Component {
+  constructor() {
+    super();
+    this.state = {
+      commentValue: '',
+      commentList: [],
+    };
+  }
+
   render() {
     return (
       <>
@@ -103,8 +111,15 @@ class MainEunjung extends Component {
                     id="comment-input"
                     type="text"
                     placeholder="댓글 달기..."
+                    onChange={this.handleCommentInput}
+                    onKeyUp={this.changeColor}
+                    value={this.state.value}
                   />
-                  <button className="comment-btn" disabled="disabled">
+                  <button
+                    className="comment-btn"
+                    disabled="disabled"
+                    onClick={this.addComment}
+                  >
                     게시
                   </button>
                 </div>

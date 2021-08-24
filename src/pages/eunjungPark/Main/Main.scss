@@ -5,37 +5,6 @@
   border-radius: 50%;
 }
 
-@mixin text-bold {
-  font-weight: bold;
-}
-
-// story, article section
-@mixin main-right-article {
-  margin: 20px 0;
-  padding: 10px;
-  border: 1px solid #efefef;
-  background-color: white;
-}
-
-@mixin feeds-bottom-imgStyle {
-  background: transparent;
-  width: 30px;
-}
-
-@mixin main-right-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10px;
-}
-
-@mixin right-article {
-  margin-top: 10px;
-  height: 50px;
-  display: inline-flex;
-  align-items: center;
-}
-
 @mixin feeds-profile {
   width: 100%;
   height: 50px;
@@ -43,11 +12,23 @@
   align-items: center;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  border: none;
+@mixin feeds-bottom-imgStyle {
+  background: transparent;
+  width: 30px;
+}
+
+@mixin story-article-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+@mixin story-article-section {
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #efefef;
+  background-color: white;
 }
 
 html,
@@ -64,11 +45,10 @@ body {
   position: relative;
 
   .main {
-    width: 950px;
     background-color: #fafafa;
     display: inline-flex;
     justify-content: space-between;
-    padding-top: 60px;
+    padding-top: 30px;
 
     .feeds {
       width: 600px;
@@ -103,7 +83,7 @@ body {
               }
             }
             .user-id {
-              @include text-bold;
+              font-weight: bold;
             }
           }
 
@@ -172,14 +152,14 @@ body {
             display: inline-block;
 
             .user-id {
-              @include text-bold;
+              font-weight: bold;
             }
 
             .bold {
-              @include text-bold;
+              font-weight: bold;
 
               .like-number {
-                @include text-bold;
+                font-weight: bold;
               }
             }
           }
@@ -193,7 +173,7 @@ body {
             position: relative;
 
             .user-id {
-              @include text-bold;
+              font-weight: bold;
               margin-right: 5px;
             }
 
@@ -214,9 +194,9 @@ body {
           width: 100%;
           height: 35px;
           margin: auto;
-          align-items: center;
           display: flex;
           justify-content: space-between;
+          align-items: center;
           background-color: white;
           border: 1px solid #dfdfdf;
 
@@ -237,7 +217,6 @@ body {
         }
       }
     }
-    // main-right
     .main-right {
       width: 350px;
       padding-top: 50px;
@@ -259,7 +238,7 @@ body {
 
         div {
           .user-id {
-            @include text-bold;
+            font-weight: bold;
           }
 
           .color-light {
@@ -268,16 +247,16 @@ body {
         }
       }
       .story {
-        @include main-right-article;
+        @include story-article-section;
 
         .story-title {
-          @include main-right-title;
+          @include story-article-title;
 
           .color-light {
             color: #999999;
           }
           .bold {
-            @include text-bold;
+            font-weight: bold;
           }
         }
 
@@ -307,16 +286,16 @@ body {
       }
 
       .suggest {
-        @include main-right-article;
+        @include story-article-section;
 
         .suggest-title {
-          @include main-right-title;
+          @include story-article-title;
 
           .color-light {
             color: #999999;
           }
           .bold {
-            @include text-bold;
+            font-weight: bold;
           }
         }
 
