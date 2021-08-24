@@ -38,6 +38,7 @@ class Article extends Component {
       this.setState({
         commentList: this.state.commentList.concat(this.state.commentInput),
         commentInput: '',
+        commentCounter: this.state.commentCounter + 1,
       });
   };
 
@@ -45,11 +46,12 @@ class Article extends Component {
     const {
       userName,
       className,
-      peedLoveColor,
       changePeedLove,
       commentLoveClassName,
       imgSrc,
     } = this.props;
+
+    const { commentInput, commentList } = this.state;
 
     return (
       <div className="article">
@@ -76,11 +78,7 @@ class Article extends Component {
         <div className="feed_bottom">
           <div className="feed_icons">
             <div>
-              <i
-                className={className}
-                style={peedLoveColor}
-                onClick={changePeedLove}
-              />
+              <i className={className} onClick={changePeedLove} />
               <i className="far fa-comment" />
               <i className="far fa-paper-plane" />
             </div>
@@ -97,7 +95,7 @@ class Article extends Component {
           </div>
           <CommentList
             commentLoveClassName={commentLoveClassName}
-            commentList={this.state.commentList}
+            commentList={commentList}
           />
           <div className="feed_time">12분전</div>
         </div>
@@ -106,7 +104,7 @@ class Article extends Component {
             className="comment_input"
             type="text"
             placeholder="댓글 달기..."
-            value={this.state.commentInput}
+            value={commentInput}
             onChange={this.getComment}
             onKeyDown={this.enter}
           />

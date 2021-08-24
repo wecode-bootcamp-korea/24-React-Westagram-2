@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import './Main.scss';
 import Nav from '../../../components/Nav/Nav';
 import Article from './Article';
 import StoryPeed from './StoryPeed';
 import StoryData from './StotyData';
 import RecommendPeed from './RecommendPeed';
 import RecommendData from './RecommendData';
+import './Main.scss';
 class MainPalanbyul extends Component {
   constructor(props) {
     super(props);
@@ -30,22 +30,17 @@ class MainPalanbyul extends Component {
   }
 
   changePeedLove = () => {
-    if (this.state.peedLoveColor === 'black') {
-      this.setState({
-        peedLoveColor: 'rgb(237, 73, 86)',
-        peedLoveClassName: 'fa fa-heart',
-      });
-    } else {
-      this.setState({
-        peedLoveColor: 'black',
-        peedLoveClassName: 'far fa-heart',
-      });
-    }
+    this.state.peedLoveClassName === 'far fa-heart'
+      ? this.setState({
+          peedLoveClassName: 'fa fa-heart',
+        })
+      : this.setState({
+          peedLoveClassName: 'far fa-heart',
+        });
   };
 
   render() {
-    const { peedLoveClassName, peedLoveColor, commentLoveClassName, feedList } =
-      this.state;
+    const { peedLoveClassName, commentLoveClassName, feedList } = this.state;
     return (
       <div className="MainPalanbyul">
         <Nav />
@@ -55,7 +50,6 @@ class MainPalanbyul extends Component {
               return (
                 <Article
                   className={peedLoveClassName}
-                  peedLoveColor={{ color: peedLoveColor }}
                   changePeedLove={this.changePeedLove}
                   commentLoveClassName={commentLoveClassName}
                   imgSrc={feed.src}

@@ -1,21 +1,21 @@
 [
   {
-    "userName": "wecode_bootcamp",
+    "userName": "legokorea_official",
     "id": 1,
     "src": "/images/palanbyulChoi/lego.jpeg"
   },
   {
-    "userName": "CSS",
+    "userName": "cu_official",
     "id": 2,
     "src": "/images/palanbyulChoi/CU.jpeg"
   },
   {
-    "userName": "REACT",
+    "userName": "lushkorea",
     "id": 3,
     "src": "/images/palanbyulChoi/lush.jpeg"
   },
   {
-    "userName": "JAVA",
+    "userName": "lushkorea",
     "id": 4,
     "src": "/images/palanbyulChoi/lush_2.jpeg"
   }

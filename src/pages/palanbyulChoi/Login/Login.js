@@ -12,25 +12,25 @@ class LoginPalanbyul extends Component {
     };
   }
   activeLogin = () => {
-    this.state.id.indexOf('@') > 0 && this.state.pw.length >= 4
+    this.state.id.indexOf('@') > 0 && this.state.pw.length >= 5
       ? this.setState({ disabled: false })
       : this.setState({ disabled: true });
   };
-  handleIdInput = e => {
-    this.setState({ id: e.target.value });
+  handleInput = e => {
+    const { value, id } = e.target;
+    this.setState({
+      [id]: value,
+    });
     this.activeLogin();
   };
 
-  handlePwInput = e => {
-    this.setState({ pw: e.target.value });
-    this.activeLogin();
-  };
   goToMain = () => {
     if (!this.state.disabled) {
       this.props.history.push('/main-palanbyul');
     }
   };
   render() {
+    const { pw, id, loginBtnClassName, disabled } = this.state;
     return (
       <login>
         <main>
@@ -38,27 +38,29 @@ class LoginPalanbyul extends Component {
           <article>
             <div className="login_id">
               <input
+                id="id"
                 type="text"
                 placeholder="전화번호, 사용자 이름또는 이메일"
                 className="idValue"
-                value={this.state.id}
-                onChange={this.handleIdInput}
+                value={id}
+                onChange={this.handleInput}
               />
             </div>
             <div className="login_password">
               <input
+                id="pw"
                 type="password"
                 placeholder="비밀번호"
                 className="passwordValue"
-                value={this.state.pw}
-                onChange={this.handlePwInput}
+                value={pw}
+                onChange={this.handleInput}
               />
             </div>
             <div>
               <button
-                className={this.state.loginBtnClassName}
+                className={loginBtnClassName}
                 onClick={this.goToMain}
-                disabled={this.state.disabled}
+                disabled={disabled}
               >
                 로그인
               </button>

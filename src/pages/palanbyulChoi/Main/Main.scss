@@ -76,7 +76,12 @@
             justify-content: space-between;
             font-size: 25px;
             margin-bottom: 5px;
-            div .fa-heart,
+            div {
+              .fa {
+                color: rgb(237, 73, 86);
+              }
+            }
+            .fa-heart,
             .fa-comment,
             .fa-paper-plane {
               font-size: 25px;
