@@ -5,8 +5,11 @@ class InputFeed extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      commentList: [],
+      userName: '정도영',
+      isLiked: 'false',
+      id: 4,
       commentValue: '',
+      commentList: [],
     };
   }
 
@@ -18,11 +21,18 @@ class InputFeed extends Component {
 
   addComment = event => {
     event.preventDefault();
-    if (this.state.commentValue === '') {
+    const { commentList, commentValue } = this.state;
+    if (commentValue === '') {
       alert('내용을 입력해주세요.');
     } else {
       this.setState({
-        commentList: this.state.commentList.concat(this.state.commentValue),
+        commentList: commentList.concat({
+          id: this.state.id,
+          userName: 'doyboy03',
+          content: commentValue,
+          isliked: false,
+        }),
+        id: this.state.id + 1,
         commentValue: '',
       });
     }
@@ -42,7 +52,6 @@ class InputFeed extends Component {
 
   render() {
     const { commentList, commentValue } = this.state;
-    console.log(this.props.commentList);
 
     return (
       <div>
@@ -103,9 +112,9 @@ class InputFeed extends Component {
 
           <form type="submit" className="addReply">
             <input
+              className="inputText"
               onChange={this.makeComment}
               value={commentValue}
-              className="inputText"
               type="text"
               placeholder="댓글 달기..."
             />

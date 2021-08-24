@@ -1,4 +1,4 @@
-.Main {
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,10 +18,6 @@
       margin-bottom: 10px;
       border: 2px solid #dbdbdb;
 
-      div {
-        width: 100%;
-      }
-
       .feedUploader {
         display: flex;
         align-items: center;
@@ -35,6 +31,7 @@
 
         .uploaderId {
           margin-left: 15px;
+          width: 100%;
           font-weight: 601;
         }
 
@@ -136,10 +133,10 @@
           color: white;
           font-size: 15px;
         }
+      }
 
-        .friendsReply:hover .fa-trash-alt {
-          color: #9b9b9b;
-        }
+      .friendsReply:hover .fa-trash-alt {
+        color: #9b9b9b;
       }
 
       .addReply {
@@ -310,11 +307,4 @@
       }
     }
   }
-}
-
-.trashCan {
-  position: absolute;
-  right: 20px;
-  color: white;
-  font-size: 15px;
 }

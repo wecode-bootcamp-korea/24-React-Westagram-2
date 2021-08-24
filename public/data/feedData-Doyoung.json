@@ -4,20 +4,20 @@
     "uploaderPic": "../../../images/doyoungJung/profilepic.jpeg",
     "uploaderName": "doyboy03",
     "feedPic": "../../../images/doyoungJung/greenknight.jpeg",
-    "uploaderComment": "넘나 보고싶은 영화.."
+    "uploaderComment": "넘나 보고싶은 영화..."
   },
   {
     "id": 2,
     "uploaderPic": "../../../images/doyoungJung/profilepic.jpeg",
     "uploaderName": "doyboy04",
-    "feedPic": "https://photo620x400.mnstatic.com/d85ae3cbae212b91797b36b426e3c5bf/khao-san-road.jpg",
-    "uploaderComment": "넘나 가고싶은 곳.."
+    "feedPic": "../../../images/doyoungJung/khaoSanRoad.jpeg",
+    "uploaderComment": "넘나 가고싶은 곳..."
   },
   {
     "id": 3,
     "uploaderPic": "../../../images/doyoungJung/profilepic.jpeg",
     "uploaderName": "doyboy05",
-    "feedPic": "https://lh3.googleusercontent.com/proxy/mwMmOfhrv4UQBa0g1fsvgh37TyVwLCGqmqjeILAWTafS2VYKHDVHsoduvxAJ0zlC2PTU8dCFi5LwyeKS3Cp9YFvTF2nS6a_fvsaNajnV9IRrtJ6nY7ibTwwufMPhBV0dOyg_7MTnA2OmaLMjbS8a3_8",
-    "uploaderComment": "넘나 먹고싶은 음식.."
+    "feedPic": "../../../images/doyoungJung/favoriteFood.jpeg",
+    "uploaderComment": "넘나 먹고싶은 음식..."
   }
 ]
