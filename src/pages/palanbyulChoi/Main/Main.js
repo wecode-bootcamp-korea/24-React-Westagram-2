@@ -9,8 +9,6 @@ class MainPalanbyul extends Component {
       peedLoveColor: 'black',
       peedLoveClassName: 'far fa-heart',
       commentLoveClassName: 'far fa-heart',
-      commentInput: '',
-      enter: '',
       feedList: [],
     };
   }
@@ -25,17 +23,6 @@ class MainPalanbyul extends Component {
         });
       });
   }
-  changeCommentLove = e => {
-    const newLikedComments = this.state.commentList.map(comment => {
-      if (comment.id === e.target.id) {
-        this.setState({
-          commentLoveClassName: 'fa fa-heart',
-        });
-      }
-      return comment;
-    });
-    this.setState({ commentList: newLikedComments });
-  };
   changePeedLove = () => {
     if (this.state.peedLoveColor === 'black') {
       this.setState({
@@ -50,45 +37,25 @@ class MainPalanbyul extends Component {
     }
   };
   // 댓글쓰면 담기
-  getComment = e => {
-    this.setState({ commentInput: e.target.value });
-  };
-  // 댓글 마우스로 전송 누르면 배열에 담기
-  enterComment = () => {
-    this.setState({
-      commentList: this.state.commentList.concat(this.state.commentInput),
-      commentInput: '',
-      commentCounter: this.state.commentCounter + 1,
-    });
-  };
-  enter = e => {
-    if (e.key === 'Enter')
-      this.setState({
-        commentList: this.state.commentList.concat(this.state.commentInput),
-        commentInput: '',
-      });
-  };
+
   render() {
+    const { peedLoveClassName, peedLoveColor, commentLoveClassName, feedList } =
+      this.state;
     return (
       <div className="MainPalanbyul">
         <Nav />
         <main>
           <div className="feeds">
-            {this.state.feedList.map(el => {
+            {feedList.map(feed => {
               return (
                 <Article
-                  className={this.state.peedLoveClassName}
-                  style={{ color: this.state.peedLoveColor }}
-                  onClick={this.changePeedLove}
-                  value={this.state.commentInput}
-                  onChange={this.getComment}
-                  onKeyDown={this.enter}
-                  onClickk={this.enterComment}
-                  commentLove={this.state.commentLoveClassName}
-                  changeCommentLove={this.changeCommentLove}
-                  feedList={el.src}
-                  key={el.id}
-                  userName={el.userName}
+                  className={peedLoveClassName}
+                  peedLoveColor={{ color: peedLoveColor }}
+                  changePeedLove={this.changePeedLove}
+                  commentLoveClassName={commentLoveClassName}
+                  imgSrc={feed.src}
+                  key={feed.id}
+                  userName={feed.userName}
                 />
               );
             })}

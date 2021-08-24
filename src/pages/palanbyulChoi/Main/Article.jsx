@@ -1,7 +1,51 @@
 import React, { Component } from 'react';
 import CommentList from './CommentList';
 class Article extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      commentInput: '',
+      commentList: [],
+    };
+  }
+  componentDidMount() {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET', // GET method는 기본값이라서 생략이 가능합니다.
+    }) // 예시코드에서는 이해를 돕기 위해 명시적으로 기입해뒀습니다.
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          commentList: data,
+        });
+      });
+  }
+  getComment = e => {
+    this.setState({ commentInput: e.target.value });
+  };
+  // 댓글 마우스로 전송 누르면 배열에 담기
+  enterComment = () => {
+    this.setState({
+      commentList: this.state.commentList.concat(this.state.commentInput),
+      commentInput: '',
+      commentCounter: this.state.commentCounter + 1,
+    });
+  };
+  enter = e => {
+    if (e.key === 'Enter')
+      this.setState({
+        commentList: this.state.commentList.concat(this.state.commentInput),
+        commentInput: '',
+      });
+  };
   render() {
+    const {
+      userName,
+      className,
+      peedLoveColor,
+      changePeedLove,
+      commentLove,
+      imgSrc,
+    } = this.props;
     return (
       <div className="article">
         <div className="profile_box">
@@ -14,7 +58,7 @@ class Article extends Component {
               />
             </div>
             <div className="username">
-              <strong>{this.props.userName}</strong>
+              <strong>{userName}</strong>
             </div>
           </div>
           <div id="faEllipsis">
@@ -22,19 +66,15 @@ class Article extends Component {
           </div>
         </div>
         <div className="feed">
-          <img
-            alt="feed_photo"
-            className="feed_photo"
-            src={this.props.feedList}
-          />
+          <img alt="feed_photo" className="feed_photo" src={imgSrc} />
         </div>
         <div className="feed_bottom">
           <div className="feed_icons">
             <div>
               <i
-                className={this.props.className}
-                style={this.props.style}
-                onClick={this.props.onClick}
+                className={className}
+                style={peedLoveColor}
+                onClick={changePeedLove}
               />
               <i className="far fa-comment" />
               <i className="far fa-paper-plane" />
@@ -47,12 +87,12 @@ class Article extends Component {
             <strong>CSS</strong>님 <strong>외 3명</strong>이좋아합니다
           </div>
           <div className="feed_text">
-            <strong>{this.props.userName}</strong> 안녕하세요
+            <strong>{userName}</strong> 안녕하세요
             <br />
           </div>
           <CommentList
-            commentLove={this.props.commentLove}
-            changeCommentLove={this.props.changeCommentLove}
+            commentLove={commentLove}
+            commentList={this.state.commentList}
           />
           <div className="feed_time">12분전</div>
         </div>
@@ -61,11 +101,11 @@ class Article extends Component {
             className="comment_input"
             type="text"
             placeholder="댓글 달기..."
-            value={this.props.value}
-            onChange={this.props.onChange}
-            onKeyDown={this.props.onKeyDown}
+            value={this.state.commentInput}
+            onChange={this.getComment}
+            onKeyDown={this.enter}
           />
-          <span className="comment_enter" onClick={this.props.onClickk}>
+          <span className="comment_enter" onClick={this.enterComment}>
             게시
           </span>
         </div>

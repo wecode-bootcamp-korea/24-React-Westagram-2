@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 class Comment extends Component {
   render() {
+    const { userName, comment, commentLoveClassName, changeCommentLove } =
+      this.props;
     return (
       <>
         <div>
-          <strong>{this.props.name}</strong>
-          <span> {this.props.comment}</span>
+          <strong>{userName}</strong>
+          <span> {comment}</span>
         </div>
         <div>
           <i className="fas fa-times" id="commentOut" />
-          <i
-            className={this.props.commentLove}
-            onClick={this.props.changeCommentLove}
-          />
+          <i className={commentLoveClassName} onClick={changeCommentLove} />
         </div>
       </>
     );

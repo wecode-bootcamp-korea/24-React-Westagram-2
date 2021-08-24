@@ -2,21 +2,21 @@
   {
     "userName": "wecode_bootcamp",
     "id": 1,
-    "src": "/images/palanbyulChoi/main.jpeg"
+    "src": "/images/palanbyulChoi/lego.jpeg"
   },
   {
     "userName": "CSS",
     "id": 2,
-    "src": "/images/palanbyulChoi/main.jpeg"
+    "src": "/images/palanbyulChoi/CU.jpeg"
   },
   {
     "userName": "REACT",
     "id": 3,
-    "src": "/images/palanbyulChoi/main.jpeg"
+    "src": "/images/palanbyulChoi/lush.jpeg"
   },
   {
     "userName": "JAVA",
     "id": 4,
-    "src": "/images/palanbyulChoi/main.jpeg"
+    "src": "/images/palanbyulChoi/lush_2.jpeg"
   }
 ]
