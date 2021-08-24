@@ -6,19 +6,9 @@ class Article extends Component {
     this.state = {
       commentInput: '',
       commentList: [],
+      id: 4,
+      userName: '',
     };
-  }
-
-  componentDidMount() {
-    fetch('http://localhost:3000/data/commentData.json', {
-      method: 'GET', // GET method는 기본값이라서 생략이 가능합니다.
-    }) // 예시코드에서는 이해를 돕기 위해 명시적으로 기입해뒀습니다.
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          commentList: data,
-        });
-      });
   }
 
   getComment = e => {
@@ -27,19 +17,29 @@ class Article extends Component {
 
   enterComment = () => {
     this.setState({
-      commentList: this.state.commentList.concat(this.state.commentInput),
+      commentList: this.state.commentList.concat({
+        id: this.state.id,
+        userName: 'wecode_bootcamp',
+        comment: this.state.commentInput,
+      }),
       commentInput: '',
-      commentCounter: this.state.commentCounter + 1,
+      id: this.state.id + 1,
     });
+    console.log(this.state.commentList);
   };
 
   enter = e => {
     if (e.key === 'Enter')
       this.setState({
-        commentList: this.state.commentList.concat(this.state.commentInput),
+        commentList: this.state.commentList.concat({
+          id: this.state.id,
+          userName: 'wecode_bootcamp',
+          comment: this.state.commentInput,
+        }),
         commentInput: '',
-        commentCounter: this.state.commentCounter + 1,
+        id: this.state.id + 1,
       });
+    console.log(this.state.commentList);
   };
 
   render() {
@@ -49,6 +49,8 @@ class Article extends Component {
       changePeedLove,
       commentLoveClassName,
       imgSrc,
+      userImg,
+      commentList2,
     } = this.props;
 
     const { commentInput, commentList } = this.state;
@@ -58,11 +60,7 @@ class Article extends Component {
         <div className="profile_box">
           <div className="profile">
             <div>
-              <img
-                alt="my_profile"
-                className="user_photo"
-                src="/images/palanbyulChoi/wecode.jpeg"
-              />
+              <img alt="my_profile" className="user_photo" src={userImg} />
             </div>
             <div className="username">
               <strong>{userName}</strong>
@@ -96,6 +94,7 @@ class Article extends Component {
           <CommentList
             commentLoveClassName={commentLoveClassName}
             commentList={commentList}
+            commentList2={commentList2}
           />
           <div className="feed_time">12분전</div>
         </div>

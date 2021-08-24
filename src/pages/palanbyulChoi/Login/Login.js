@@ -7,20 +7,22 @@ class LoginPalanbyul extends Component {
     this.state = {
       id: '',
       pw: '',
-      loginBtnClassName: 'login_btn',
       disabled: true,
     };
   }
+
   activeLogin = () => {
     this.state.id.indexOf('@') > 0 && this.state.pw.length >= 5
       ? this.setState({ disabled: false })
       : this.setState({ disabled: true });
   };
+
   handleInput = e => {
     const { value, id } = e.target;
     this.setState({
       [id]: value,
     });
+    console.log(this.state);
     this.activeLogin();
   };
 
@@ -30,9 +32,10 @@ class LoginPalanbyul extends Component {
     }
   };
   render() {
-    const { pw, id, loginBtnClassName, disabled } = this.state;
+    const { disabled } = this.state;
+
     return (
-      <login>
+      <div className="LoginPalanbyul">
         <main>
           <div className="logo">Westagram</div>
           <article>
@@ -42,7 +45,6 @@ class LoginPalanbyul extends Component {
                 type="text"
                 placeholder="전화번호, 사용자 이름또는 이메일"
                 className="idValue"
-                value={id}
                 onChange={this.handleInput}
               />
             </div>
@@ -52,13 +54,12 @@ class LoginPalanbyul extends Component {
                 type="password"
                 placeholder="비밀번호"
                 className="passwordValue"
-                value={pw}
                 onChange={this.handleInput}
               />
             </div>
             <div>
               <button
-                className={loginBtnClassName}
+                className="login_btn"
                 onClick={this.goToMain}
                 disabled={disabled}
               >
@@ -68,7 +69,7 @@ class LoginPalanbyul extends Component {
           </article>
           <footer>비밀번호를 잊으셨나요?</footer>
         </main>
-      </login>
+      </div>
     );
   }
 }

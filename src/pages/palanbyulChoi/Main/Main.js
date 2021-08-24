@@ -55,6 +55,8 @@ class MainPalanbyul extends Component {
                   imgSrc={feed.src}
                   key={feed.id}
                   userName={feed.userName}
+                  commentList2={feed.commentList}
+                  userImg={feed.userImg}
                 />
               );
             })}
