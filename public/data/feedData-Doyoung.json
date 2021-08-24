@@ -4,20 +4,74 @@
     "uploaderPic": "../../../images/doyoungJung/profilepic.jpeg",
     "uploaderName": "doyboy03",
     "feedPic": "../../../images/doyoungJung/greenknight.jpeg",
-    "uploaderComment": "넘나 보고싶은 영화..."
+    "uploaderComment": "넘나 보고싶은 영화...",
+    "friendsComments": [
+      {
+        "id": 1,
+        "userName": "matta_eomtta",
+        "content": "이 영화 강추!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "my_first_summer",
+        "content": "나도이거 너무 보고싶어",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "이거 평 괜찮더라!",
+        "isLiked": false
+      }
+    ]
   },
   {
     "id": 2,
     "uploaderPic": "../../../images/doyoungJung/profilepic.jpeg",
     "uploaderName": "doyboy04",
     "feedPic": "../../../images/doyoungJung/khaoSanRoad.jpeg",
-    "uploaderComment": "넘나 가고싶은 곳..."
+    "uploaderComment": "넘나 가고싶은 곳...",
+    "friendsComments": [
+      {
+        "id": 1,
+        "userName": "goingdreamer",
+        "content": "언제쯤 갈 수 있을까 🤣",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "doroobo",
+        "content": "내년엔 꼭 가자",
+        "isLiked": false
+      }
+    ]
   },
   {
     "id": 3,
     "uploaderPic": "../../../images/doyoungJung/profilepic.jpeg",
     "uploaderName": "doyboy05",
     "feedPic": "../../../images/doyoungJung/favoriteFood.jpeg",
-    "uploaderComment": "넘나 먹고싶은 음식..."
+    "uploaderComment": "넘나 먹고싶은 음식...",
+    "friendsComments": [
+      {
+        "id": 1,
+        "userName": "matta_eomtta",
+        "content": "마라팟 고고",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "before_dawn",
+        "content": "순한맛 아니면 힘듬 ㅠㅠ",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "난 너무 맵던데",
+        "isLiked": false
+      }
+    ]
   }
 ]

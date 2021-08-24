@@ -24,7 +24,7 @@ class MainDoyoung extends Component {
   }
 
   render() {
-    const { commentList, commentValue, feedData } = this.state;
+    const { feedData } = this.state;
     return (
       <div>
         <body className="main">
@@ -39,8 +39,7 @@ class MainDoyoung extends Component {
                     uploaderName={data.uploaderName}
                     feedPic={data.feedPic}
                     uploaderComment={data.uploaderComment}
-                    commentList={commentList}
-                    commentVlue={commentValue}
+                    friendsComments={data.friendsComments}
                   />
                 );
               })}

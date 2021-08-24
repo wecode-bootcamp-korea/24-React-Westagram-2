@@ -5,7 +5,7 @@ class InputFeed extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userName: '정도영',
+      userName: '',
       isLiked: 'false',
       id: 4,
       commentValue: '',
@@ -21,7 +21,7 @@ class InputFeed extends Component {
 
   addComment = event => {
     event.preventDefault();
-    const { commentList, commentValue } = this.state;
+    const { commentValue, commentList } = this.state;
     if (commentValue === '') {
       alert('내용을 입력해주세요.');
     } else {
@@ -36,22 +36,14 @@ class InputFeed extends Component {
         commentValue: '',
       });
     }
+
+    console.log(commentList);
   };
 
-  componentDidMount() {
-    fetch('http://localhost:3000/data/commentData-Doyoung.json', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          commentList: data,
-        });
-      });
-  }
-
   render() {
-    const { commentList, commentValue } = this.state;
+    const { commentValue } = this.state;
+    const { commentList } = this.state;
+    const { friendsComments } = this.props;
 
     return (
       <div>
@@ -99,13 +91,9 @@ class InputFeed extends Component {
           <div className="grayReply">30분 전</div>
 
           <ul>
-            {commentList.map(comment => {
+            {friendsComments.concat(commentList).map(comment => {
               return (
-                <InputReply
-                  key={comment.id}
-                  name={comment.userName}
-                  comment={comment.content}
-                />
+                <InputReply name={comment.userName} comment={comment.content} />
               );
             })}
           </ul>
