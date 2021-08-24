@@ -1,26 +1,21 @@
 import React, { Component } from 'react';
 import Comment from '../Comment/Comment';
 import CommentForm from '../CommentForm/CommentForm';
+import './Feed.scss';
 
 class Feed extends Component {
-  handleAdd = (value, feed) => {
-    this.props.onAdd(value, feed);
-  };
-
-  handleDelete = (reply, feed) => {
-    this.props.onDelete(reply, feed);
-  };
-
   render() {
+    const { feed, comments, onDelete, onAdd } = this.props;
+    const { profile, userName, url } = feed;
     return (
-      <article className="main__feed">
+      <article className="feed-cheoljin">
         <header className="feed__header">
           <div className="feed__user">
             <a href="#">
-              <img src="/images/cheoljinJu/food.jpeg" alt="user-Profile" />
+              <img src={profile} alt="user-Profile" />
             </a>
             <a href="#">
-              <h2>Wecoder_24th</h2>
+              <h2>{userName}</h2>
             </a>
           </div>
           <button type="button">
@@ -28,7 +23,7 @@ class Feed extends Component {
           </button>
         </header>
         <div className="feed__box">
-          <img src="/images/cheoljinJu/food.jpeg" />
+          <img src={url} />
           <div className="feed__content">
             <div className="icons">
               <svg
@@ -86,18 +81,18 @@ class Feed extends Component {
                 좋아합니다
               </p>
               <ul>
-                {this.props.comments.map(reply => (
+                {comments.map(reply => (
                   <Comment
                     key={reply.id}
                     reply={reply}
-                    feed={this.props.feed}
-                    onDelete={this.handleDelete}
+                    feed={feed}
+                    onDelete={onDelete}
                   />
                 ))}
               </ul>
             </div>
           </div>
-          <CommentForm onAdd={this.handleAdd} feed={this.props.feed} />
+          <CommentForm onAdd={onAdd} feed={feed} />
         </div>
       </article>
     );

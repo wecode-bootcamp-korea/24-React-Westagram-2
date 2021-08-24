@@ -1,0 +1,91 @@
+.feed-cheoljin {
+  width: 550px;
+  margin-right: 370px;
+  margin-bottom: 28px;
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+
+  .feed__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 16px;
+    background-color: #fff;
+
+    .feed__user {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        transition: text-decoration 200ms ease-in;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:first-child {
+          height: 32px;
+        }
+      }
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin-right: 12px;
+      }
+
+      h2 {
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  strong {
+    cursor: pointer;
+    transition: text-decoration 100ms ease-in;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .feed__box {
+    img {
+      width: 100%;
+    }
+
+    .feed__content {
+      padding: 12px;
+
+      .icons {
+        margin-bottom: 8px;
+
+        .icon {
+          margin-right: 12px;
+          cursor: pointer;
+
+          &:last-child {
+            margin-left: 380px;
+          }
+        }
+      }
+    }
+  }
+
+  .feed__liked {
+    margin-bottom: 8px;
+
+    strong {
+      margin: 0 6px 0 0;
+      font-weight: bold;
+
+      &:last-child {
+        margin-left: 6px;
+      }
+    }
+  }
+}

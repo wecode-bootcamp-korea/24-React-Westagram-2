@@ -14,7 +14,7 @@ class CommentForm extends Component {
   render() {
     return (
       <form
-        className="comment-box"
+        className="commentForm-cheoljin"
         onSubmit={e => {
           this.handleAdd(e, this.props.feed);
         }}

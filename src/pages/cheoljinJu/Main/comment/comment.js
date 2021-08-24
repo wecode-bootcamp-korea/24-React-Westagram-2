@@ -7,10 +7,9 @@ class Comment extends Component {
   };
 
   render() {
-    const { userName, comment } = this.props.reply;
-    const { isUser } = this.props.reply;
+    const { userName, comment, isUser } = this.props.reply;
     return (
-      <li className="feed__comment">
+      <li className="comment-cheoljin">
         <span>{userName}</span>
         <span>{comment}</span>
         <button type="button" className="comment__heart">
