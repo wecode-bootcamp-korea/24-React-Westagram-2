@@ -4,10 +4,11 @@ import CommentForm from '../CommentForm/CommentForm';
 import './Feed.scss';
 
 class Feed extends Component {
-  constructor(feed) {
-    super();
-    this.state = feed;
-  }
+  state = {};
+
+  componentDidMount = () => {
+    this.setState(this.props.feed);
+  };
 
   handleAdd = value => {
     const comment = {
@@ -104,7 +105,7 @@ class Feed extends Component {
                 좋아합니다
               </p>
               <ul>
-                {this.state.comments.map(reply => (
+                {this.state.comments?.map(reply => (
                   <Comment
                     key={reply.id}
                     reply={reply}
