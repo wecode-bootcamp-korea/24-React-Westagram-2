@@ -4,6 +4,30 @@ import CommentForm from '../CommentForm/CommentForm';
 import './Feed.scss';
 
 class Feed extends Component {
+  state = {};
+
+  componentWillMount = () => {
+    this.setState(this.props.feed);
+  };
+
+  handleAdd = (value, feed) => {
+    const comment = {
+      id: Date.now(),
+      userName: '24_Wecode',
+      comment: value,
+      isUser: true,
+    };
+    const comments = [...this.state.comments, comment];
+    this.setState({ comments }, () => {
+      console.log(this.state);
+    });
+  };
+
+  handleDelete = reply => {
+    const comments = this.state.comments.filter(item => reply.id !== item.id);
+    this.setState({ comments });
+  };
+
   render() {
     const { feed, comments, onDelete, onAdd } = this.props;
     const { profile, userName, url } = feed;
@@ -81,18 +105,18 @@ class Feed extends Component {
                 좋아합니다
               </p>
               <ul>
-                {comments.map(reply => (
+                {this.state.comments.map(reply => (
                   <Comment
                     key={reply.id}
                     reply={reply}
                     feed={feed}
-                    onDelete={onDelete}
+                    onDelete={this.handleDelete}
                   />
                 ))}
               </ul>
             </div>
           </div>
-          <CommentForm onAdd={onAdd} feed={feed} />
+          <CommentForm onAdd={this.handleAdd} feed={feed} />
         </div>
       </article>
     );

@@ -20,37 +20,37 @@ class MainCheoljin extends Component {
       });
   };
 
-  handleAdd = (value, feed) => {
-    const comment = {
-      id: Date.now(),
-      userName: '24_Wecode',
-      comment: value,
-      isUser: true,
-    };
-    const comments = [...feed.comments, comment];
-    const newFeed = { ...feed, comments };
-    const feeds = this.state.feeds.map(item => {
-      if (feed.id === item.id) {
-        return newFeed;
-      } else {
-        return item;
-      }
-    });
-    this.setState({ feeds });
-  };
+  // handleAdd = (value, feed) => {
+  //   const comment = {
+  //     id: Date.now(),
+  //     userName: '24_Wecode',
+  //     comment: value,
+  //     isUser: true,
+  //   };
+  //   const comments = [...feed.comments, comment];
+  //   const newFeed = { ...feed, comments };
+  //   const feeds = this.state.feeds.map(item => {
+  //     if (feed.id === item.id) {
+  //       return newFeed;
+  //     } else {
+  //       return item;
+  //     }
+  //   });
+  //   this.setState({ feeds });
+  // };
 
-  handleDelete = (reply, feed) => {
-    const comments = feed.comments.filter(item => reply.id !== item.id);
-    const newFeed = { ...feed, comments };
-    const feeds = this.state.feeds.map(item => {
-      if (feed.id === item.id) {
-        return newFeed;
-      } else {
-        return item;
-      }
-    });
-    this.setState({ feeds });
-  };
+  // handleDelete = (reply, feed) => {
+  //   const comments = feed.comments.filter(item => reply.id !== item.id);
+  //   const newFeed = { ...feed, comments };
+  //   const feeds = this.state.feeds.map(item => {
+  //     if (feed.id === item.id) {
+  //       return newFeed;
+  //     } else {
+  //       return item;
+  //     }
+  //   });
+  //   this.setState({ feeds });
+  // };
 
   render() {
     return (

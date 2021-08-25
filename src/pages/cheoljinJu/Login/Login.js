@@ -16,13 +16,46 @@ class LoginCheoljin extends Component {
     this.setState(state);
   };
 
-  goToMain = () => {
-    this.props.history.push('/main-cheoljin');
+  // goToMain = () => {
+  //   this.props.history.push('/main-cheoljin');
+  // };
+
+  handleSignUp = event => {
+    fetch('http://10.58.1.129:8000/users/sign-up', {
+      method: 'POST',
+      body: JSON.stringify({
+        nane: '하루',
+        email: this.state.id,
+        password: this.state.password,
+        phone_number: '010-1111-2222',
+        date_of_birth: '2001-01-02',
+      }),
+    })
+      .then(result => result.json())
+      .then(result => console.log(result));
+  };
+
+  handleLogin = event => {
+    fetch('http://10.58.1.129:8000/users/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.id,
+        password: this.state.password,
+      }),
+    })
+      .then(result => result.json())
+      .then(result => {
+        result.TOKEN
+          ? this.props.history.push('/main-cheoljin')
+          : alert('아이디와 비밀번호를 맞게 작성해주세요');
+        console.log(result);
+      });
   };
 
   render() {
     const { id, password } = this.state;
     const isActive = id.includes('@') && password.length > 4 ? true : false;
+    console.log(this.state);
 
     return (
       <div className="login">
@@ -47,7 +80,7 @@ class LoginCheoljin extends Component {
               type="button"
               className={`login-form__submit ${isActive ? 'active' : ''}`}
               disabled={!isActive}
-              onClick={this.goToMain}
+              onClick={this.handleLogin}
             >
               로그인
             </button>
