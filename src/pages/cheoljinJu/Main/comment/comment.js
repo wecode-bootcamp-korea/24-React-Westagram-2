@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './Comment.scss';
 
 class Comment extends Component {
-  handleDelete = (e, feed) => {
-    this.props.onDelete(this.props.reply, feed);
+  handleDelete = e => {
+    this.props.onDelete(this.props.reply);
   };
 
   render() {
@@ -18,9 +18,7 @@ class Comment extends Component {
         <button
           type="button"
           className="comment__delete"
-          onClick={e => {
-            this.handleDelete(e, this.props.feed);
-          }}
+          onClick={this.handleDelete}
         >
           <i class={isUser ? 'far fa-trash-alt' : 'far fa-trash-alt none'} />
         </button>

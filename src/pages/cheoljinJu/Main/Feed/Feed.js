@@ -4,13 +4,12 @@ import CommentForm from '../CommentForm/CommentForm';
 import './Feed.scss';
 
 class Feed extends Component {
-  state = {};
+  constructor(feed) {
+    super();
+    this.state = feed;
+  }
 
-  componentWillMount = () => {
-    this.setState(this.props.feed);
-  };
-
-  handleAdd = (value, feed) => {
+  handleAdd = value => {
     const comment = {
       id: Date.now(),
       userName: '24_Wecode',
@@ -29,7 +28,7 @@ class Feed extends Component {
   };
 
   render() {
-    const { feed, comments, onDelete, onAdd } = this.props;
+    const { feed } = this.props;
     const { profile, userName, url } = feed;
     return (
       <article className="feed-cheoljin">

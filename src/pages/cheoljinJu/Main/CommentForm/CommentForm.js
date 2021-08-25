@@ -4,21 +4,16 @@ import './CommentForm.scss';
 class CommentForm extends Component {
   inputRef = React.createRef();
 
-  handleAdd = (e, feed) => {
+  handleAdd = e => {
     e.preventDefault();
     const { value } = this.inputRef.current;
-    value && this.props.onAdd(value, feed);
+    value && this.props.onAdd(value);
     this.inputRef.current.value = '';
   };
 
   render() {
     return (
-      <form
-        className="commentForm-cheoljin"
-        onSubmit={e => {
-          this.handleAdd(e, this.props.feed);
-        }}
-      >
+      <form className="commentForm-cheoljin" onSubmit={this.handleAdd}>
         <input
           type="text"
           aria-label="댓글달기"
