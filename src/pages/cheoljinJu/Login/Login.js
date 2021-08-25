@@ -16,10 +16,6 @@ class LoginCheoljin extends Component {
     this.setState(state);
   };
 
-  // goToMain = () => {
-  //   this.props.history.push('/main-cheoljin');
-  // };
-
   handleSignUp = event => {
     fetch('http://10.58.1.129:8000/users/sign-up', {
       method: 'POST',
