@@ -65,11 +65,13 @@
         margin-bottom: 8px;
 
         .icon {
+          width: 24px;
+          height: 24px;
           margin-right: 12px;
           cursor: pointer;
 
           &:last-child {
-            margin-left: 380px;
+            margin-left: 415px;
           }
         }
       }

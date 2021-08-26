@@ -20,7 +20,9 @@ class Comment extends Component {
           className="comment__delete"
           onClick={this.handleDelete}
         >
-          <i class={isUser ? 'far fa-trash-alt' : 'far fa-trash-alt none'} />
+          <i
+            className={isUser ? 'far fa-trash-alt' : 'far fa-trash-alt none'}
+          />
         </button>
       </li>
     );
