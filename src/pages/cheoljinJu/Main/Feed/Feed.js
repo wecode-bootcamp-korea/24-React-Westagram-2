@@ -72,14 +72,15 @@ class Feed extends Component {
                 좋아합니다
               </p>
               <ul>
-                {this.state.comments?.map(reply => (
-                  <Comment
-                    key={reply.id}
-                    reply={reply}
-                    feed={feed}
-                    onDelete={this.handleDelete}
-                  />
-                ))}
+                {this.state.comments &&
+                  this.state.comments?.map(reply => (
+                    <Comment
+                      key={reply.id}
+                      reply={reply}
+                      feed={feed}
+                      onDelete={this.handleDelete}
+                    />
+                  ))}
               </ul>
             </div>
           </div>
