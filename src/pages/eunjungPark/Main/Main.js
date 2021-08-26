@@ -1,20 +1,39 @@
 import React, { Component } from 'react';
 import './Main.scss';
 import Nav from '../../../components/Nav/Nav';
+import Comment from './Comment';
+
+const commentList = [
+  {
+    id: 1,
+    userId: 'hoon-zz',
+    commentText: '은정아 라이언좀 그만 사',
+  },
+  {
+    id: 2,
+    userId: 'ryan.seoul.icon',
+    commentText: '춘식이는 프렌즈를 좋아해',
+  },
+  {
+    id: 3,
+    userId: 'boragom_molly',
+    commentText: '무더운 여름밤 춘식이와 나선 밤 산책',
+  },
+];
 
 class MainEunjung extends Component {
   constructor() {
     super();
     this.state = {
       commentValue: '',
-      commentList: [],
     };
   }
 
   render() {
     return (
       <>
-        <Nav />
+        {' '}
+        <Nav />{' '}
         <div className="body-container">
           <div className="main">
             <div className="feeds">
@@ -30,7 +49,7 @@ class MainEunjung extends Component {
                     <span className="user-id">eunJeong</span>
                   </div>
                   <div className="title-right">
-                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                    <i className="fa fa-ellipsis-h" aria-hidden="true"></i>
                   </div>
                 </header>
 
@@ -72,9 +91,9 @@ class MainEunjung extends Component {
                     />
                   </div>
                   <div className="comment-tit">
-                    <span className="user-id">chunSig</span>님
+                    <span className="user-id">chunSig </span>님
                     <span className="bold">
-                      외<span className="like-number">10명</span>
+                      외 <span className="like-number">10명</span>
                     </span>
                     이 좋아합니다.
                   </div>
@@ -82,26 +101,22 @@ class MainEunjung extends Component {
 
                 <footer className="art-comment">
                   <div className="comment-nth">
-                    <span className="user-id">eunJeong</span>
+                    <span className="user-id">eunJeong </span>
                     <span>수호가 라이언을 좋아하는구나..!</span>
                     <span className="color-light">더 보기</span>
                   </div>
                   <p className="color-light"></p>
 
                   <div className="comment-nth">
-                    <span className="user-id">hoon-zz</span>
-                    <span className="comment-text">
-                      은정아 라이언 좀 적당히 사
-                    </span>
-                    <img
-                      className="comment-like"
-                      style={{
-                        width: '13px',
-                        height: '13px',
-                      }}
-                      alt="좋아요"
-                      src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-                    />
+                    {commentList.map(comment => {
+                      return (
+                        <Comment
+                          key={comment.id}
+                          userId={comment.userId}
+                          commentText={comment.commentText}
+                        />
+                      );
+                    })}
                     <p className="color-light">42분 전</p>
                   </div>
                 </footer>
