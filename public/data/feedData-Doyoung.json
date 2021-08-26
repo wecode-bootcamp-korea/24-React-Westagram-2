@@ -41,8 +41,14 @@
       },
       {
         "id": 2,
-        "userName": "doroobo",
+        "userName": "victor-kim",
         "content": "내년엔 꼭 가자",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "my_first_summer",
+        "content": "Miss So much...",
         "isLiked": false
       }
     ]

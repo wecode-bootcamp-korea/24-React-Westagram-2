@@ -5,9 +5,10 @@ class InputPassword extends Component {
     return (
       <div>
         <input
-          onChange={this.props.handleInputPassword}
+          onChange={this.props.handleInput}
           className="loginPassword loginInformation"
           type="password"
+          name="password"
           placeholder="비밀번호"
         />
       </div>

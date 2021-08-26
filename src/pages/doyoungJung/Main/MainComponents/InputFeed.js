@@ -5,12 +5,14 @@ class InputFeed extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userName: '',
-      isLiked: 'false',
       id: 4,
       commentValue: '',
       commentList: [],
     };
+  }
+
+  componentDidMount() {
+    this.setState({ commentList: this.props.friendsComments });
   }
 
   makeComment = event => {
@@ -36,14 +38,29 @@ class InputFeed extends Component {
         commentValue: '',
       });
     }
-
-    console.log(commentList);
   };
 
-  render() {
-    const { commentValue } = this.state;
+  deleteComment = id => {
     const { commentList } = this.state;
-    const { friendsComments } = this.props;
+
+    const newCommentList = commentList.filter(item => item.id !== id);
+
+    console.log(newCommentList, id);
+
+    this.setState({
+      commentList: newCommentList,
+    });
+  };
+
+  // deleteComment = commentListId => {
+  //   const goodd = this.state.commentList.filter(
+  //     comment => Number(comment.id) !== Number(commentListId)
+  //   );
+  //   this.setState({ commentList: goodd });
+  // };
+
+  render() {
+    const { commentValue, commentList } = this.state;
 
     return (
       <div>
@@ -91,9 +108,15 @@ class InputFeed extends Component {
           <div className="grayReply">30분 전</div>
 
           <ul>
-            {friendsComments.concat(commentList).map(comment => {
+            {commentList.map(comment => {
               return (
-                <InputReply name={comment.userName} comment={comment.content} />
+                <InputReply
+                  key={comment.id}
+                  deleteComment={this.deleteComment}
+                  name={comment.userName}
+                  content={comment.content}
+                  id={comment.id}
+                />
               );
             })}
           </ul>

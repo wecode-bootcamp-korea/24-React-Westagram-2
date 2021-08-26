@@ -5,10 +5,11 @@ class InputId extends Component {
     return (
       <div>
         <input
-          onChange={this.props.handleInputID}
+          onChange={this.props.handleInput}
           className="loginId loginInformation"
           type="text"
-          placeholder="전화번호, 사용자 이름 또는 이메일"
+          name="email"
+          placeholder="이메일"
         />
       </div>
     );
