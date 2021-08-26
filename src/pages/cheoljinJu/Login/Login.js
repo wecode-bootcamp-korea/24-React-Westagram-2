@@ -44,14 +44,12 @@ class LoginCheoljin extends Component {
         result.TOKEN
           ? this.props.history.push('/main-cheoljin')
           : alert('아이디와 비밀번호를 맞게 작성해주세요');
-        console.log(result);
       });
   };
 
   render() {
     const { id, password } = this.state;
     const isActive = id.includes('@') && password.length > 4 ? true : false;
-    console.log(this.state);
 
     return (
       <div className="login">

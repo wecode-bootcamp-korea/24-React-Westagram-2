@@ -16,11 +16,10 @@ class Feed extends Component {
       userName: '24_Wecode',
       comment: value,
       isUser: true,
+      isLike: false,
     };
     const comments = [...this.state.comments, comment];
-    this.setState({ comments }, () => {
-      console.log(this.state);
-    });
+    this.setState({ comments });
   };
 
   handleDelete = reply => {
@@ -28,7 +27,22 @@ class Feed extends Component {
     this.setState({ comments });
   };
 
+  handleLike = reply => {
+    const comments = this.state.comments.map(item => {
+      if (item.id === reply.id) {
+        item.isLike = !item.isLike;
+        return item;
+      } else {
+        return item;
+      }
+    });
+    this.setState({ comments });
+  };
+
   render() {
+    const { comments } = this.state;
+    const totalLike =
+      comments && comments.filter(item => item.isLike === true).length;
     const { feed } = this.props;
     const { profile, userName, url } = feed;
     return (
@@ -73,17 +87,18 @@ class Feed extends Component {
             </div>
             <div className="feed__text">
               <p className="feed__liked">
-                <strong>wecode__bootcamp</strong>님<strong>외 10명</strong>이
-                좋아합니다
+                <strong>wecode__bootcamp</strong>님
+                <strong>외 {totalLike}명</strong>이 좋아합니다
               </p>
               <ul>
-                {this.state.comments &&
-                  this.state.comments.map(reply => (
+                {comments &&
+                  comments.map(reply => (
                     <Comment
                       key={reply.id}
                       reply={reply}
                       feed={feed}
                       onDelete={this.handleDelete}
+                      onLike={this.handleLike}
                     />
                   ))}
               </ul>
