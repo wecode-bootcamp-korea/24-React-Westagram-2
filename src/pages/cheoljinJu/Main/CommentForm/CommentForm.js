@@ -7,7 +7,7 @@ class CommentForm extends Component {
   handleAdd = e => {
     e.preventDefault();
     const { value } = this.inputRef.current;
-    value && this.props.onAdd(value);
+    value.trim() && this.props.onAdd(value);
     this.inputRef.current.value = '';
   };
 

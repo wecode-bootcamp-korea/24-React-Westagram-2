@@ -51,6 +51,11 @@ class Feed extends Component {
           <div className="feed__content">
             <div className="icons">
               <img
+                src="/images/cheoljinJu/heart.png"
+                alt="댓글 달기"
+                className="icon"
+              />
+              <img
                 src="/images/cheoljinJu/commentary.png"
                 alt="댓글 달기"
                 className="icon"
@@ -73,7 +78,7 @@ class Feed extends Component {
               </p>
               <ul>
                 {this.state.comments &&
-                  this.state.comments?.map(reply => (
+                  this.state.comments.map(reply => (
                     <Comment
                       key={reply.id}
                       reply={reply}
