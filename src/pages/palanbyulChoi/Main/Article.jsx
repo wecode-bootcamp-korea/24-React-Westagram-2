@@ -11,25 +11,23 @@ class Article extends Component {
     };
   }
 
+  componentDidMount() {
+    this.setState({ commentList: this.props.commentList2 });
+  }
+
+  onDelete = commentListId => {
+    const goodd = this.state.commentList.filter(
+      comment => comment.id !== commentListId
+    );
+    this.setState({ commentList: goodd });
+  };
+
   getComment = e => {
     this.setState({ commentInput: e.target.value });
   };
 
-  enterComment = () => {
-    this.setState({
-      commentList: this.state.commentList.concat({
-        id: this.state.id,
-        userName: 'wecode_bootcamp',
-        comment: this.state.commentInput,
-      }),
-      commentInput: '',
-      id: this.state.id + 1,
-    });
-    console.log(this.state.commentList);
-  };
-
-  enter = e => {
-    if (e.key === 'Enter')
+  addComment = () => {
+    if (this.state.commentInput) {
       this.setState({
         commentList: this.state.commentList.concat({
           id: this.state.id,
@@ -39,18 +37,31 @@ class Article extends Component {
         commentInput: '',
         id: this.state.id + 1,
       });
-    console.log(this.state.commentList);
+    }
+  };
+
+  enter = e => {
+    if (e.key === 'Enter' && this.state.commentInput)
+      this.setState({
+        commentList: this.state.commentList.concat({
+          id: this.state.id,
+          userName: 'wecode_bootcamp',
+          comment: this.state.commentInput,
+        }),
+        commentInput: '',
+        id: this.state.id + 1,
+      });
   };
 
   render() {
     const {
       userName,
-      className,
+      peedLoveClassName,
       changePeedLove,
       commentLoveClassName,
       imgSrc,
       userImg,
-      commentList2,
+      feedText,
     } = this.props;
 
     const { commentInput, commentList } = this.state;
@@ -76,7 +87,7 @@ class Article extends Component {
         <div className="feed_bottom">
           <div className="feed_icons">
             <div>
-              <i className={className} onClick={changePeedLove} />
+              <i className={peedLoveClassName} onClick={changePeedLove} />
               <i className="far fa-comment" />
               <i className="far fa-paper-plane" />
             </div>
@@ -88,13 +99,13 @@ class Article extends Component {
             <strong>CSS</strong>님 <strong>외 3명</strong>이좋아합니다
           </div>
           <div className="feed_text">
-            <strong>{userName}</strong> 안녕하세요
+            <strong>{userName}</strong> {feedText}
             <br />
           </div>
           <CommentList
             commentLoveClassName={commentLoveClassName}
             commentList={commentList}
-            commentList2={commentList2}
+            onDelete={this.onDelete}
           />
           <div className="feed_time">12분전</div>
         </div>
@@ -107,9 +118,9 @@ class Article extends Component {
             onChange={this.getComment}
             onKeyDown={this.enter}
           />
-          <span className="comment_enter" onClick={this.enterComment}>
+          <button className="comment_enter" onClick={this.addComment}>
             게시
-          </span>
+          </button>
         </div>
       </div>
     );

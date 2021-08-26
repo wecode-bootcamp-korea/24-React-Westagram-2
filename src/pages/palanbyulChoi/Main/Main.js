@@ -19,8 +19,8 @@ class MainPalanbyul extends Component {
 
   componentDidMount() {
     fetch('http://localhost:3000/data/feedData.json', {
-      method: 'GET', // GET method는 기본값이라서 생략이 가능합니다.
-    }) // 예시코드에서는 이해를 돕기 위해 명시적으로 기입해뒀습니다.
+      method: 'GET',
+    })
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -49,7 +49,7 @@ class MainPalanbyul extends Component {
             {feedList.map(feed => {
               return (
                 <Article
-                  className={peedLoveClassName}
+                  peedLoveClassName={peedLoveClassName}
                   changePeedLove={this.changePeedLove}
                   commentLoveClassName={commentLoveClassName}
                   imgSrc={feed.src}
@@ -57,6 +57,7 @@ class MainPalanbyul extends Component {
                   userName={feed.userName}
                   commentList2={feed.commentList}
                   userImg={feed.userImg}
+                  feedText={feed.feedText}
                 />
               );
             })}
