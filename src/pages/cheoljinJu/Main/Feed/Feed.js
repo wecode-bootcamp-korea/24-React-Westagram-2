@@ -4,7 +4,13 @@ import CommentForm from '../CommentForm/CommentForm';
 import './Feed.scss';
 
 class Feed extends Component {
-  state = {};
+  state = {
+    id: '',
+    profile: '',
+    userName: '',
+    url: '',
+    comments: [],
+  };
 
   componentDidMount = () => {
     this.setState(this.props.feed);
@@ -91,16 +97,15 @@ class Feed extends Component {
                 <strong>외 {totalLike}명</strong>이 좋아합니다
               </p>
               <ul>
-                {comments &&
-                  comments.map(reply => (
-                    <Comment
-                      key={reply.id}
-                      reply={reply}
-                      feed={feed}
-                      onDelete={this.handleDelete}
-                      onLike={this.handleLike}
-                    />
-                  ))}
+                {comments.map(reply => (
+                  <Comment
+                    key={reply.id}
+                    reply={reply}
+                    feed={feed}
+                    onDelete={this.handleDelete}
+                    onLike={this.handleLike}
+                  />
+                ))}
               </ul>
             </div>
           </div>

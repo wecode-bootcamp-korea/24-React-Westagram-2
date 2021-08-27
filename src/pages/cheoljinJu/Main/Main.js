@@ -10,7 +10,7 @@ class MainCheoljin extends Component {
   };
 
   componentDidMount = () => {
-    fetch('http://localhost:3000/data/CommentDataCJ.json', {
+    fetch('/data/CommentDataCJ.json', {
       method: 'GET',
     })
       .then(result => result.json())
