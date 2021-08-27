@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import './Login.scss';
-import '../../../styles/reset.scss';
-import '../../../styles/common.scss';
 
 class LoginCheoljin extends Component {
   state = {
@@ -12,15 +10,14 @@ class LoginCheoljin extends Component {
 
   handleInput = event => {
     const { className, value } = event.target;
-    const state = { ...this.state, [className]: value };
-    this.setState(state);
+    this.setState({ [className]: value });
   };
 
   handleSignUp = event => {
     fetch('http://10.58.1.129:8000/users/sign-up', {
       method: 'POST',
       body: JSON.stringify({
-        nane: '하루',
+        name: '하루',
         email: this.state.id,
         password: this.state.password,
         phone_number: '010-1111-2222',

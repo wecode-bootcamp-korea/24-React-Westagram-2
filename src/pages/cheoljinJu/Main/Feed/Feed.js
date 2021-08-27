@@ -109,7 +109,7 @@ class Feed extends Component {
               </ul>
             </div>
           </div>
-          <CommentForm onAdd={this.handleAdd} feed={feed} />
+          <CommentForm onAdd={this.handleAdd} />
         </div>
       </article>
     );
