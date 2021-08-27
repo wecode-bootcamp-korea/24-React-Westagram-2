@@ -45,11 +45,9 @@ class Feed extends Component {
   };
 
   render() {
-    const { comments } = this.state;
-    const totalLike =
-      comments && comments.filter(item => item.isLike === true).length;
-    const { feed } = this.props;
-    const { profile, userName, url } = feed;
+    const { comments, profile, userName, url } = this.state;
+    const totalLike = comments.filter(item => item.isLike === true).length;
+
     return (
       <article className="feed-cheoljin">
         <header className="feed__header">
