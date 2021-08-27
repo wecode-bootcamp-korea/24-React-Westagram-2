@@ -28,16 +28,15 @@ class Feed extends Component {
     this.setState({ comments });
   };
 
-  handleDelete = reply => {
-    const comments = this.state.comments.filter(item => reply.id !== item.id);
+  handleDelete = comment => {
+    const comments = this.state.comments.filter(item => comment.id !== item.id);
     this.setState({ comments });
   };
 
-  handleLike = reply => {
+  handleLike = comment => {
     const comments = this.state.comments.map(item => {
-      if (item.id === reply.id) {
-        item.isLike = !item.isLike;
-        return item;
+      if (item.id === comment.id) {
+        return { ...item, isLike: !item.isLike };
       } else {
         return item;
       }
@@ -97,11 +96,10 @@ class Feed extends Component {
                 <strong>외 {totalLike}명</strong>이 좋아합니다
               </p>
               <ul>
-                {comments.map(reply => (
+                {comments.map(comment => (
                   <Comment
-                    key={reply.id}
-                    reply={reply}
-                    feed={feed}
+                    key={comment.id}
+                    comment={comment}
                     onDelete={this.handleDelete}
                     onLike={this.handleLike}
                   />

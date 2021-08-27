@@ -3,15 +3,15 @@ import './Comment.scss';
 
 class Comment extends Component {
   handleDelete = e => {
-    this.props.onDelete(this.props.reply);
+    this.props.onDelete(this.props.comment);
   };
 
   handleLike = e => {
-    this.props.onLike(this.props.reply);
+    this.props.onLike(this.props.comment);
   };
 
   render() {
-    const { userName, comment, isUser, isLike } = this.props.reply;
+    const { userName, comment, isUser, isLike } = this.props.comment;
     return (
       <li className="comment-cheoljin">
         <span>{userName}</span>
