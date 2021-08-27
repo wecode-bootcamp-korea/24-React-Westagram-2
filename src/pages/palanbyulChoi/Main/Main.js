@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import Nav from '../../../components/Nav/Nav';
 import Article from './Article';
-import StoryPeed from './StoryPeed';
+import StoryFeed from './StoryFeed';
 import StoryData from './StotyData';
-import RecommendPeed from './RecommendPeed';
+import RecommendFeed from './RecommendFeed';
 import RecommendData from './RecommendData';
 import './Main.scss';
 class MainPalanbyul extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      peedLoveColor: 'black',
-      peedLoveClassName: 'far fa-heart',
+      feedLoveColor: 'black',
+      feedLoveClassName: 'far fa-heart',
       commentLoveClassName: 'far fa-heart',
       feedList: [],
     };
@@ -29,18 +29,18 @@ class MainPalanbyul extends Component {
       });
   }
 
-  changePeedLove = () => {
-    this.state.peedLoveClassName === 'far fa-heart'
-      ? this.setState({
-          peedLoveClassName: 'fa fa-heart',
-        })
-      : this.setState({
-          peedLoveClassName: 'far fa-heart',
-        });
+  changeFeedLove = loveId => {
+    const likeFeedList = this.state.feedList.map(feed => {
+      if (feed.id === loveId) {
+        feed.isLiked = !feed.isLiked;
+      }
+      return feed;
+    });
+    this.setState({ feedList: likeFeedList });
   };
 
   render() {
-    const { peedLoveClassName, commentLoveClassName, feedList } = this.state;
+    const { feedLoveClassName, commentLoveClassName, feedList } = this.state;
     return (
       <div className="MainPalanbyul">
         <Nav />
@@ -49,15 +49,17 @@ class MainPalanbyul extends Component {
             {feedList.map(feed => {
               return (
                 <Article
-                  peedLoveClassName={peedLoveClassName}
-                  changePeedLove={this.changePeedLove}
+                  feedLoveClassName={feedLoveClassName}
+                  changeFeedLove={this.changeFeedLove}
                   commentLoveClassName={commentLoveClassName}
                   imgSrc={feed.src}
                   key={feed.id}
                   userName={feed.userName}
-                  commentList2={feed.commentList}
+                  commentListData={feed.commentList}
                   userImg={feed.userImg}
                   feedText={feed.feedText}
+                  feedId={feed.id}
+                  isLiked={feed.isLiked}
                 />
               );
             })}
@@ -81,10 +83,10 @@ class MainPalanbyul extends Component {
                   <div>스토리</div>
                   <div>모두보기</div>
                 </div>
-                <div className="story_peeds">
+                <div className="story_feeds">
                   {StoryData.map(story => {
                     return (
-                      <StoryPeed
+                      <StoryFeed
                         imgSrc={story.src}
                         key={story.id}
                         userName={story.userName}
@@ -98,10 +100,10 @@ class MainPalanbyul extends Component {
                   <div>회원님을 위한 추천</div>
                   <div>모두보기</div>
                 </div>
-                <div className="recommend_peeds">
+                <div className="recommend_feeds">
                   {RecommendData.map(recommend => {
                     return (
-                      <RecommendPeed
+                      <RecommendFeed
                         imgSrc={recommend.src}
                         key={recommend.id}
                         userName={recommend.userName}

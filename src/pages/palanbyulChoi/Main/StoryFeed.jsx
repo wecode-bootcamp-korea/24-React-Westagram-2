@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-class StoryPeed extends Component {
+class StoryFeed extends Component {
   render() {
     const { imgSrc, userName } = this.props;
     return (
-      <div className="story_peed">
+      <div className="story_feed">
         <div className="story_photo">
           <img alt="wecoder_photo" className="user_photo" src={imgSrc} />
         </div>
@@ -18,4 +18,4 @@ class StoryPeed extends Component {
   }
 }
 
-export default StoryPeed;
+export default StoryFeed;

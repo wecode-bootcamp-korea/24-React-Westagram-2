@@ -32,10 +32,10 @@ class LoginPalanbyul extends Component {
     }
   };
   con = () => {
-    fetch('http://10.58.0.171:8000/users/sign-in', {
+    fetch('http://10.58.2.219:8000/postings/posting', {
       method: 'POST',
       body: JSON.stringify({
-        email: this.state.id,
+        feed_text: this.state.id,
         password: this.state.pw,
         name: '테드하',
         phone_number: '010-2222-3333',
@@ -52,7 +52,19 @@ class LoginPalanbyul extends Component {
         }
       });
   };
-
+  con = () => {
+    fetch('http://10.58.2.219:8000/postings/posting', {
+      method: 'POST',
+      body: JSON.stringify({
+        feed_text: this.state.id,
+        image_url: this.state.pw,
+      }),
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxNn0.qOl1lSALZKy8IyW1JrGMhCus2L6ToOQEaxiyBO_5kN0', //토큰 값 전달
+      },
+    });
+  };
   render() {
     return (
       <div className="LoginPalanbyul">

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-class RecommendPeed extends Component {
+class RecommendFeed extends Component {
   render() {
     const { imgSrc, userName } = this.props;
     return (
-      <div className="recommend_peed">
+      <div className="recommend_feed">
         <div className="recommend_photo">
           <img alt="wecoder_photo" src={imgSrc} className="user_photo" />
         </div>
@@ -21,4 +21,4 @@ class RecommendPeed extends Component {
   }
 }
 
-export default RecommendPeed;
+export default RecommendFeed;

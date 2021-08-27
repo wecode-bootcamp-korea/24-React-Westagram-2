@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CommentList from './CommentList';
+import Love from './Love';
 class Article extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +13,7 @@ class Article extends Component {
   }
 
   componentDidMount() {
-    this.setState({ commentList: this.props.commentList2 });
+    this.setState({ commentList: this.props.commentListData });
   }
 
   onDelete = commentListId => {
@@ -56,8 +57,7 @@ class Article extends Component {
   render() {
     const {
       userName,
-      peedLoveClassName,
-      changePeedLove,
+      feedLoveClassName,
       commentLoveClassName,
       imgSrc,
       userImg,
@@ -87,7 +87,12 @@ class Article extends Component {
         <div className="feed_bottom">
           <div className="feed_icons">
             <div>
-              <i className={peedLoveClassName} onClick={changePeedLove} />
+              <Love
+                feedLoveClassName={feedLoveClassName}
+                changeFeedLove={this.props.changeFeedLove}
+                feedId={this.props.feedId}
+                isLiked={this.props.isLiked}
+              />
               <i className="far fa-comment" />
               <i className="far fa-paper-plane" />
             </div>
