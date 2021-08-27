@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "userName": "wecode_bootcamp",
+    "description": "회원님을 팔로우 합니다.",
+    "isBorder": false
+  },
+  {
+    "id": 2,
+    "userName": "wecode_bootcamp",
+    "description": "회원님을 팔로우 합니다.",
+    "isBorder": false
+  },
+  {
+    "id": 3,
+    "userName": "wecode_bootcamp",
+    "description": "회원님을 팔로우 합니다.",
+    "isBorder": false
+  }
+]

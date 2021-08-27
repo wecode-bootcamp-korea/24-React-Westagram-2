@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "userName": "wecode_bootcamp",
+    "description": "10분전",
+    "isBorder": true
+  },
+  {
+    "id": 2,
+    "userName": "wecode_bootcamp",
+    "description": "10분전",
+    "isBorder": true
+  },
+  {
+    "id": 3,
+    "userName": "wecode_bootcamp",
+    "description": "10분전",
+    "isBorder": true
+  }
+]

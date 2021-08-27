@@ -1,0 +1,25 @@
+.main-cheoljin {
+  button {
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+    border: none;
+  }
+
+  .main {
+    display: flex;
+    margin: 0 auto;
+    background-color: #fafafa;
+
+    .main__container {
+      position: relative;
+      display: flex;
+      margin: 0 auto;
+      padding: 90px 260px;
+
+      .main__feeds {
+        width: 600px;
+      }
+    }
+  }
+}

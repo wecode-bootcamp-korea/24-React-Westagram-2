@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "profile": "/images/cheoljinJu/food.jpeg",
+    "userName": "CheoljinJu",
+    "url": "/images/cheoljinJu/food.jpeg",
+    "comments": [
+      {
+        "id": 1,
+        "userName": "현재님",
+        "comment": "안녕하세요!",
+        "isUser": false,
+        "isLike": false
+      },
+      {
+        "id": 2,
+        "userName": "동희님",
+        "comment": "오히려 좋아",
+        "isUser": false,
+        "isLike": false
+      },
+      {
+        "id": 3,
+        "userName": "영현님",
+        "comment": "동희님이 싫어요!",
+        "isUser": false,
+        "isLike": false
+      },
+      {
+        "id": 4,
+        "userName": "무현님",
+        "comment": "저 인사 안하고 집에 갈거에요.",
+        "isUser": false,
+        "isLike": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "profile": "/images/cheoljinJu/cat.jpeg",
+    "userName": "CatCat",
+    "url": "/images/cheoljinJu/cat.jpeg",
+    "comments": [
+      {
+        "id": 1,
+        "userName": "승찬님",
+        "comment": "반갑습니다!",
+        "isUser": false,
+        "isLike": false
+      },
+      {
+        "id": 2,
+        "userName": "성환님",
+        "comment": "감사합니다.",
+        "isUser": false,
+        "isLike": true
+      },
+      {
+        "id": 3,
+        "userName": "세준님",
+        "comment": "자전거 타고 싶습니다!",
+        "isUser": false,
+        "isLike": true
+      },
+      {
+        "id": 4,
+        "userName": "연우님",
+        "comment": "킥오프 기다리셨죠?",
+        "isUser": false,
+        "isLike": false
+      }
+    ]
+  }
+]

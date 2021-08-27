@@ -1,0 +1,36 @@
+.comment-cheoljin {
+  position: relative;
+  height: 26px;
+  margin-bottom: 4px;
+  list-style: none;
+
+  span:first-child {
+    margin-right: 8px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  button {
+    position: absolute;
+  }
+
+  .comment__delete {
+    right: 40px;
+
+    .far.fa-trash-alt.none {
+      display: none;
+    }
+  }
+
+  .comment__heart {
+    right: 10px;
+
+    .fas.fa-heart {
+      color: red;
+    }
+  }
+}
