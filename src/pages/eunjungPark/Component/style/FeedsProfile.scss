@@ -1,0 +1,25 @@
+@import '../../../../styles/eunjungMixin.scss';
+
+.feeds-profile {
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+
+  div {
+    margin: 10px;
+    img {
+      @include img-style;
+    }
+  }
+  div {
+    .user-id {
+      font-weight: bold;
+    }
+    .color-light {
+      color: #999999;
+    }
+  }
+}

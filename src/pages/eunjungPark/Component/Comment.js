@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import './style/Comment.scss';
 
 class Comment extends Component {
   render() {
-    console.log(this.props);
     return (
-      <div>
+      <div className="comment">
         <span className="user-id">{this.props.userId}</span>
         <span className="comment-text">{this.props.commentText}</span>
         <img

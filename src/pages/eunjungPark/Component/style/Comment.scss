@@ -1,0 +1,14 @@
+@import '../../../../styles/eunjungMixin.scss';
+
+.comment {
+  .user-id {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .comment-like {
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+  }
+}

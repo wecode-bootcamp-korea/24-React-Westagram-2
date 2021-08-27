@@ -1,0 +1,32 @@
+@mixin img-style {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+}
+
+@mixin feeds-profile {
+  width: 100%;
+  height: 50px;
+  display: inline-flex;
+  align-items: center;
+}
+
+@mixin feeds-bottom-imgStyle {
+  background: transparent;
+  width: 30px;
+}
+
+@mixin story-article-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+@mixin story-article-section {
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #efefef;
+  background-color: white;
+}
