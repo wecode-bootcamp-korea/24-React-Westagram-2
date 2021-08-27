@@ -7,11 +7,17 @@ class Nav extends Component {
       <nav className="nav">
         <div className="nav-wrapper">
           <div className="nav__logos">
-            <a href="#">
+            <a
+              href="http://naver.com
+            "
+            >
               <i className="fab fa-instagram"></i>
             </a>
             <div className="divider"></div>
-            <a href="#">
+            <a
+              href="http://naver.com
+            "
+            >
               <h1 className="nav__name">westagram</h1>
             </a>
           </div>
@@ -19,21 +25,30 @@ class Nav extends Component {
             <input type="text" className="nav__search" placeholder="검색" />
           </form>
           <div className="nav__menu">
-            <a href="#">
+            <a
+              href="http://naver.com
+            "
+            >
               <img
                 src="/images/Nav/explore.png"
                 alt="explore"
                 className="menu__item"
               />
             </a>
-            <a href="#">
+            <a
+              href="http://naver.com
+            "
+            >
               <img
                 src="/images/Nav/heart.png"
                 alt="liked content"
                 className="menu__item"
               />
             </a>
-            <a href="#">
+            <a
+              href="http://naver.com
+            "
+            >
               <img
                 src="/images/Nav/profile.png"
                 alt="profile"

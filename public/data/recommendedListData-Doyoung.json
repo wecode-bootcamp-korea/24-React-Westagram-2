@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "altMessage": "recommendedUserPicture",
+    "recommendedUserPicPath": "../../../images/doyoungJung/bluebottle.jpeg",
+    "recommendedUserName": "bluebottle",
+    "followInformation": "wonder_e님 외 2명이 팔로우"
+  },
+  {
+    "id": 2,
+    "altMessage": "recommendedUserPicture",
+    "recommendedUserPicPath": "../../../images/doyoungJung/apple.jpeg",
+    "recommendedUserName": "apple",
+    "followInformation": "wonder_e님 외 2명이 팔로우"
+  },
+  {
+    "id": 3,
+    "altMessage": "recommendedUserPicture",
+    "recommendedUserPicPath": "../../../images/doyoungJung/krispy.jpeg",
+    "recommendedUserName": "krispykreme",
+    "followInformation": "wonder_e님 외 2명이 팔로우"
+  },
+  {
+    "id": 4,
+    "altMessage": "recommendedUserPicture",
+    "recommendedUserPicPath": "../../../images/doyoungJung/mcdonalds.jpeg",
+    "recommendedUserName": "mcdonalds_kr",
+    "followInformation": "wonder_e님 외 2명이 팔로우"
+  }
+]
