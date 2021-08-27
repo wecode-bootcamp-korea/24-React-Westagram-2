@@ -9,8 +9,8 @@ class LoginCheoljin extends Component {
   };
 
   handleInput = event => {
-    const { className, value } = event.target;
-    this.setState({ [className]: value });
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   };
 
   handleSignUp = event => {
@@ -57,6 +57,7 @@ class LoginCheoljin extends Component {
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
               className="id"
+              name="id"
               aria-label="전화번호, 사용자 이름 또는 이메일"
               onChange={this.handleInput}
             />
@@ -64,6 +65,7 @@ class LoginCheoljin extends Component {
               type="password"
               placeholder="비밀번호"
               className="password"
+              name="password"
               aria-label="비밀번호"
               onChange={this.handleInput}
             />
