@@ -7,12 +7,8 @@ class InputFeed extends Component {
     this.state = {
       id: 4,
       commentValue: '',
-      commentList: [],
+      commentList: this.props.friendsComments,
     };
-  }
-
-  componentDidMount() {
-    this.setState({ commentList: this.props.friendsComments });
   }
 
   makeComment = event => {
@@ -42,22 +38,11 @@ class InputFeed extends Component {
 
   deleteComment = id => {
     const { commentList } = this.state;
-
     const newCommentList = commentList.filter(item => item.id !== id);
-
-    console.log(newCommentList, id);
-
     this.setState({
       commentList: newCommentList,
     });
   };
-
-  // deleteComment = commentListId => {
-  //   const goodd = this.state.commentList.filter(
-  //     comment => Number(comment.id) !== Number(commentListId)
-  //   );
-  //   this.setState({ commentList: goodd });
-  // };
 
   render() {
     const { commentValue, commentList } = this.state;

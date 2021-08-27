@@ -4,8 +4,6 @@ import InputId from './LoginComponents/InputId';
 import InputPassword from './LoginComponents/InputPassword';
 import LoginButton from './LoginComponents/LoginButton';
 import './Login.scss';
-import '../../../styles/common.scss';
-import '../../../styles/reset.scss';
 
 class LoginDoyoung extends Component {
   constructor(props) {
@@ -30,11 +28,6 @@ class LoginDoyoung extends Component {
       body: JSON.stringify({
         email: this.state.email,
         password: this.state.password,
-        // name: '정도영',
-        // phone_number: '01027631662',
-        // date_of_birth: '1995-05-20',
-        // address: 'seoul',
-        // gender: 'M',
       }),
     })
       .then(response => response.json())
@@ -42,12 +35,10 @@ class LoginDoyoung extends Component {
         if (result.TOKEN) {
           this.props.history.push('/main-doyoung');
           alert('로그인 성공!');
-          console.log(result);
         } else {
           alert('로그인 or 비밀번호를 확인해주세요.');
         }
       });
-    // .then(result => console.log('결과: ', result));
   };
 
   render() {
@@ -55,7 +46,7 @@ class LoginDoyoung extends Component {
     console.log(password);
     return (
       <div>
-        <main className="Login">
+        <main className="logIn">
           <div className="loginPage">
             <h1 className="logo">Westagram</h1>
             <form className="loginSpace">

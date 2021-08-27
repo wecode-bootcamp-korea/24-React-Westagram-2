@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "altMessage": "Bluebottle Logo",
+    "picPath": "../../../images/doyoungJung/bluebottle.jpeg",
+    "storyFriendName": "bluebottlecoffee_korea",
+    "uploadTimeAgo": "10분 전"
+  },
+  {
+    "id": 2,
+    "altMessage": "Apple Logo",
+    "picPath": "../../../images/doyoungJung/apple.jpeg",
+    "storyFriendName": "apple",
+    "uploadTimeAgo": "11분 전"
+  },
+  {
+    "id": 3,
+    "altMessage": "Krispy Logo",
+    "picPath": "../../../images/doyoungJung/krispy.jpeg",
+    "storyFriendName": "krispykreme",
+    "uploadTimeAgo": "12분 전"
+  },
+  {
+    "id": 4,
+    "altMessage": "Mcdonalds Logo",
+    "picPath": "../../../images/doyoungJung/mcdonalds.jpeg",
+    "storyFriendName": "mcdonalds_kr",
+    "uploadTimeAgo": "13분 전"
+  }
+]
