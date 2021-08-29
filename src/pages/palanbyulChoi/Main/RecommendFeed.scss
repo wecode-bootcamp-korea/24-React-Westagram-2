@@ -1,0 +1,60 @@
+.recommend {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  padding: 20px;
+  border: 1px rgb(219, 219, 219) solid;
+  background-color: white;
+  border-radius: 3px;
+  overflow: scroll;
+
+  .recommendNav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    color: gray;
+  }
+
+  .recommendFeeds {
+    display: flex;
+    flex-direction: column;
+
+    .recommendFeed {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 5px;
+
+      .userPhoto {
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+
+      .recommendInfo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .feedTime {
+          color: gray;
+          font-size: 12px;
+        }
+
+        .follow {
+          margin-left: 145px;
+          color: #0095f6;
+          font-size: 12px;
+        }
+
+        .follow:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.recommend::-webkit-scrollbar {
+  display: none;
+}

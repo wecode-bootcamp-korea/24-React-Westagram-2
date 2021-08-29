@@ -1,4 +1,4 @@
-const RecommendData = [
+const RECOMMEND_DATA = [
   {
     id: 1,
     userName: 'Liam',
@@ -26,4 +26,4 @@ const RecommendData = [
   },
 ];
 
-export default RecommendData;
+export default RECOMMEND_DATA;

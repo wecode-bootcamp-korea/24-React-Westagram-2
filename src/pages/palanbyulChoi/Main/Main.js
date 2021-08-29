@@ -6,19 +6,17 @@ import StoryData from './StotyData';
 import RecommendFeed from './RecommendFeed';
 import RecommendData from './RecommendData';
 import './Main.scss';
+
 class MainPalanbyul extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      feedLoveColor: 'black',
-      feedLoveClassName: 'far fa-heart',
-      commentLoveClassName: 'far fa-heart',
       feedList: [],
     };
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/feedData.json', {
+    fetch('/data/feedData.json', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -40,7 +38,7 @@ class MainPalanbyul extends Component {
   };
 
   render() {
-    const { feedLoveClassName, commentLoveClassName, feedList } = this.state;
+    const { feedLoveClassName, feedList } = this.state;
     return (
       <div className="MainPalanbyul">
         <Nav />
@@ -51,7 +49,6 @@ class MainPalanbyul extends Component {
                 <Article
                   feedLoveClassName={feedLoveClassName}
                   changeFeedLove={this.changeFeedLove}
-                  commentLoveClassName={commentLoveClassName}
                   imgSrc={feed.src}
                   key={feed.id}
                   userName={feed.userName}
@@ -65,25 +62,25 @@ class MainPalanbyul extends Component {
             })}
           </div>
           <aside>
-            <div className="main_right">
-              <div className="my_profile">
-                <div className="my_photo">
+            <div className="mainRight">
+              <div className="myProfile">
+                <div className="myPhoto">
                   <img
-                    alt="wecoder_photo"
+                    alt="wecoderPhoto"
                     src="/images/palanbyulChoi/wecode.jpeg"
                   />
                 </div>
-                <div className="my_info">
-                  <div className="my_id">wecode_bootcamp</div>
-                  <div className="my_name">WeCode | 위코드</div>
+                <div className="myInfo">
+                  <div className="myId">wecode_bootcamp</div>
+                  <div className="myName">WeCode | 위코드</div>
                 </div>
               </div>
               <div className="story">
-                <div className="story_nav">
+                <div className="storyNav">
                   <div>스토리</div>
                   <div>모두보기</div>
                 </div>
-                <div className="story_feeds">
+                <div className="storyFeeds">
                   {StoryData.map(story => {
                     return (
                       <StoryFeed
@@ -96,11 +93,11 @@ class MainPalanbyul extends Component {
                 </div>
               </div>
               <div className="recommend">
-                <div className="recommend_nav">
+                <div className="recommendNav">
                   <div>회원님을 위한 추천</div>
                   <div>모두보기</div>
                 </div>
-                <div className="recommend_feeds">
+                <div className="recommendFeeds">
                   {RecommendData.map(recommend => {
                     return (
                       <RecommendFeed

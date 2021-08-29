@@ -7,31 +7,23 @@ class LoginPalanbyul extends Component {
     this.state = {
       id: '',
       pw: '',
-      disabled: true,
     };
   }
 
-  activeLogin = () => {
-    this.state.id.indexOf('@') > 0 && this.state.pw.length >= 5
-      ? this.setState({ disabled: false })
-      : this.setState({ disabled: true });
-  };
-
   handleInput = e => {
     const { value, id } = e.target;
-    this.setState(
-      {
-        [id]: value,
-      },
-      this.activeLogin
-    );
+    this.setState({
+      [id]: value,
+    });
   };
+
   goToMain = () => {
     if (!this.state.disabled) {
       this.props.history.push('/main-palanbyul');
     }
   };
-  con = () => {
+
+  Postlogin = () => {
     fetch('http://10.58.2.219:8000/postings/posting', {
       method: 'POST',
       body: JSON.stringify({
@@ -44,7 +36,6 @@ class LoginPalanbyul extends Component {
     })
       .then(response => response.json())
       .then(response => {
-        console.log(response);
         if (response.message === 'SUCCESS') {
           alert('성공');
         } else if (response.message === 'INVALID_USER') {
@@ -52,7 +43,8 @@ class LoginPalanbyul extends Component {
         }
       });
   };
-  con = () => {
+
+  postToken = () => {
     fetch('http://10.58.2.219:8000/postings/posting', {
       method: 'POST',
       body: JSON.stringify({
@@ -65,20 +57,17 @@ class LoginPalanbyul extends Component {
       },
     });
   };
+
   render() {
+    const { id, pw } = this.state;
+    const isButtonDisabled = id.includes('@') && pw.length >= 5;
     return (
-      <div className="LoginPalanbyul">
+      <div className="loginPalanbyul">
         <main>
           <div className="logo">Westagram</div>
           <article>
-            <form
-              onSubmit={e => {
-                // e.preventDefault();
-
-                console.log(e);
-              }}
-            >
-              <div className="login_id">
+            <form>
+              <div className="loginId">
                 <input
                   id="id"
                   type="text"
@@ -87,7 +76,7 @@ class LoginPalanbyul extends Component {
                   onChange={this.handleInput}
                 />
               </div>
-              <div className="login_password">
+              <div className="loginPassword">
                 <input
                   id="pw"
                   type="password"
@@ -99,9 +88,9 @@ class LoginPalanbyul extends Component {
               <div>
                 <button
                   type="button"
-                  className="login_btn"
+                  className="loginBtn"
                   onClick={this.goToMain}
-                  disabled={this.state.disabled}
+                  disabled={!isButtonDisabled}
                 >
                   로그인
                 </button>

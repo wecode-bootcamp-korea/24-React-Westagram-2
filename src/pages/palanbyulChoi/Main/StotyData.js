@@ -1,4 +1,4 @@
-const StoryData = [
+const STORY_DATA = [
   {
     id: 1,
     userName: 'Logan',
@@ -26,4 +26,4 @@ const StoryData = [
   },
 ];
 
-export default StoryData;
+export default STORY_DATA;

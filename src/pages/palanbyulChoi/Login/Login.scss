@@ -1,13 +1,13 @@
-.LoginPalanbyul {
+.loginPalanbyul {
   main {
-    height: 490px;
-    width: 450px;
-    padding: 50px 0;
-    border: #efefef solid 2px;
-    margin: 100px auto;
-    text-align: center;
     display: flex;
     flex-direction: column;
+    width: 450px;
+    height: 490px;
+    margin: 100px auto;
+    padding: 50px 0;
+    border: #efefef solid 2px;
+    text-align: center;
 
     .logo {
       margin-bottom: 50px;
@@ -19,34 +19,27 @@
       height: 45px;
       width: 300px;
       margin-bottom: 10px;
+      padding-left: 10px;
       background-color: #fafafa;
       border: #efefef 1px solid;
       border-radius: 6px;
-      padding-left: 10px;
     }
 
-    .login_btn:disabled {
+    .loginBtn {
       width: 300px;
       height: 35px;
+      margin-bottom: 100px;
       border-radius: 6px;
       border: white;
-      margin-bottom: 100px;
-      background-color: #c4e1fb;
-      color: white;
-      font-size: 17px;
-      cursor: auto;
-    }
-
-    .login_btn {
-      width: 300px;
-      height: 35px;
-      border-radius: 6px;
-      border: white;
-      margin-bottom: 100px;
       background-color: #0095f6;
       color: white;
       font-size: 17px;
       cursor: pointer;
+
+      &:disabled {
+        background-color: #c4e1fb;
+        cursor: auto;
+      }
     }
 
     footer {

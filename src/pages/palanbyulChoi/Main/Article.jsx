@@ -1,77 +1,66 @@
 import React, { Component } from 'react';
 import CommentList from './CommentList';
 import Love from './Love';
+import './Article.scss';
+
 class Article extends Component {
   constructor(props) {
     super(props);
     this.state = {
       commentInput: '',
-      commentList: [],
+      commentList: this.props.commentListData,
       id: 4,
       userName: '',
     };
   }
 
-  componentDidMount() {
-    this.setState({ commentList: this.props.commentListData });
-  }
-
   onDelete = commentListId => {
-    const goodd = this.state.commentList.filter(
+    const newComment = this.state.commentList.filter(
       comment => comment.id !== commentListId
     );
-    this.setState({ commentList: goodd });
+    this.setState({ commentList: newComment });
   };
 
   getComment = e => {
     this.setState({ commentInput: e.target.value });
   };
 
+  addMyInfo = () => {
+    this.setState({
+      commentList: this.state.commentList.concat({
+        id: this.state.id,
+        userName: 'wecode_bootcamp',
+        comment: this.state.commentInput,
+      }),
+      commentInput: '',
+      id: this.state.id + 1,
+    });
+  };
+
   addComment = () => {
     if (this.state.commentInput) {
-      this.setState({
-        commentList: this.state.commentList.concat({
-          id: this.state.id,
-          userName: 'wecode_bootcamp',
-          comment: this.state.commentInput,
-        }),
-        commentInput: '',
-        id: this.state.id + 1,
-      });
+      this.addMyInfo();
     }
   };
 
-  enter = e => {
-    if (e.key === 'Enter' && this.state.commentInput)
-      this.setState({
-        commentList: this.state.commentList.concat({
-          id: this.state.id,
-          userName: 'wecode_bootcamp',
-          comment: this.state.commentInput,
-        }),
-        commentInput: '',
-        id: this.state.id + 1,
-      });
+  handleEnter = e => {
+    if (e.key === 'Enter' && this.state.commentInput) {
+      this.addMyInfo();
+    }
   };
 
   render() {
-    const {
-      userName,
-      feedLoveClassName,
-      commentLoveClassName,
-      imgSrc,
-      userImg,
-      feedText,
-    } = this.props;
+    const { userName, feedLoveClassName, imgSrc, userImg, feedText } =
+      this.props;
 
     const { commentInput, commentList } = this.state;
 
     return (
       <div className="article">
-        <div className="profile_box">
+        <div className="profileBox">
           <div className="profile">
             <div>
-              <img alt="my_profile" className="user_photo" src={userImg} />
+              <img alt="myProfile" className="userPhoto" src={userImg} />
             </div>
             <div className="username">
               <strong>{userName}</strong>
@@ -82,10 +71,10 @@ class Article extends Component {
           </div>
         </div>
         <div className="feed">
-          <img alt="feed_photo" className="feed_photo" src={imgSrc} />
+          <img alt="feedPhoto" className="feedPhoto" src={imgSrc} />
         </div>
-        <div className="feed_bottom">
-          <div className="feed_icons">
+        <div className="feedBottom">
+          <div className="feedIcons">
             <div>
               <Love
                 feedLoveClassName={feedLoveClassName}
@@ -100,30 +89,26 @@ class Article extends Component {
               <i className="far fa-bookmark" />
             </div>
           </div>
-          <div className="feed_likes">
+          <div className="feedLikes">
             <strong>CSS</strong>님 <strong>외 3명</strong>이좋아합니다
           </div>
-          <div className="feed_text">
+          <div className="feedText">
             <strong>{userName}</strong> {feedText}
             <br />
           </div>
-          <CommentList
-            commentLoveClassName={commentLoveClassName}
-            commentList={commentList}
-            onDelete={this.onDelete}
-          />
-          <div className="feed_time">12분전</div>
+          <CommentList commentList={commentList} onDelete={this.onDelete} />
+          <div className="feedTime">12분전</div>
         </div>
-        <div className="comment_input_box">
+        <div className="commentInputBox">
           <input
-            className="comment_input"
+            className="commentInput"
             type="text"
             placeholder="댓글 달기..."
             value={commentInput}
             onChange={this.getComment}
-            onKeyDown={this.enter}
+            onKeyDown={this.handleEnter}
           />
-          <button className="comment_enter" onClick={this.addComment}>
+          <button className="commentEnter" onClick={this.addComment}>
             게시
           </button>
         </div>

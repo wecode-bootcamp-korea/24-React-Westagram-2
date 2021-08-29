@@ -2,9 +2,11 @@
   FontAwesomeIcon:hover {
     cursor: pointer;
   }
+
   strong {
     font-weight: 600;
   }
+
   li {
     list-style: none;
   }
@@ -13,260 +15,51 @@
     background-color: #fafafa;
     padding: 100px 220px;
     display: flex;
+
     .feeds {
       height: 100%;
       width: 615px;
       border-radius: 3px;
       margin-right: 40px;
-      .article {
-        width: 100%;
-        height: 1100px;
-        border-radius: 3px;
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 50px;
-        border: 1px rgb(219, 219, 219) solid;
-        .profile_box {
-          width: 100%;
-          height: 60px;
-          display: flex;
-          justify-content: space-between;
-          .profile {
-            display: flex;
-            text-align: center;
-            .user_photo {
-              width: 35px;
-              height: 35px;
-              border-radius: 50%;
-              margin: 13px;
-            }
-
-            .username {
-              font-size: 15px;
-              margin: auto 0;
-            }
-          }
-          #faEllipsis {
-            height: 60px;
-            width: 60px;
-            text-align: center;
-            padding: 20px;
-            font-size: 20px;
-          }
-        }
-        .feed {
-          width: 100%;
-          height: 100%;
-          .feed_photo {
-            width: 100%;
-            height: 100%;
-          }
-        }
-        .feed_bottom {
-          height: 250px;
-          padding: 15px;
-          font-size: 15px;
-          border-bottom: 1px rgb(219, 219, 219) solid;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-          .feed_icons {
-            display: flex;
-            justify-content: space-between;
-            font-size: 25px;
-            margin-bottom: 5px;
-            div {
-              .fa {
-                color: rgb(237, 73, 86);
-              }
-            }
-            .fa-heart,
-            .fa-comment,
-            .fa-paper-plane {
-              font-size: 25px;
-              margin-right: 15px;
-            }
-          }
-          .feed_likes {
-            margin-bottom: 10px;
-          }
-
-          .feed_time {
-            color: gray;
-            font-size: 12px;
-          }
-          .comment_box::-webkit-scrollbar {
-            display: none;
-          }
-        }
-        .comment_input_box {
-          width: 615px;
-          height: 65px;
-          padding: 0 25px;
-          display: flex;
-          justify-content: space-between;
-          .comment_input {
-            width: 520px;
-            background-color: white;
-            margin: auto 0;
-            color: gray;
-            border: white;
-            height: 20px;
-            border-radius: 3px;
-          }
-
-          .comment_enter {
-            color: #c1e0fd;
-            margin: auto 0;
-            background-color: white;
-            border: 0;
-            outline: 0;
-          }
-
-          .comment_enter:hover {
-            cursor: pointer;
-          }
-        }
-      }
     }
-    .main_right {
+
+    .mainRight {
       display: flex;
       flex-direction: column;
       width: 325px;
       position: fixed;
       top: 100px;
+      @media screen and (max-width: 1000px) {
+        display: none;
+      }
     }
-    .my_profile {
+
+    .myProfile {
       display: flex;
       flex-direction: row;
       margin-bottom: 20px;
       width: 325px;
       margin-left: 20px;
-      .my_photo img {
+
+      .myPhoto img {
         width: 55px;
         height: 55px;
         border-radius: 50%;
       }
-      .my_info {
+
+      .myInfo {
         padding: 10px;
-        .my_name {
+
+        .myName {
           color: #8e8e8e;
         }
       }
     }
-    .story::-webkit-scrollbar {
-      display: none;
-    }
-
-    .story {
-      width: 100%;
-      height: 250px;
-      padding: 20px;
-      border: rgb(219, 219, 219) 1px solid;
-      border-radius: 3px;
-      margin-bottom: 20px;
-      display: flex;
-      flex-direction: column;
-      background-color: white;
-      overflow: scroll;
-      .story_nav {
-        color: gray;
-        margin-bottom: 5px;
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .story_feeds {
-        display: flex;
-        flex-direction: column;
-        .story_feed {
-          margin-bottom: 5px;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          .user_photo {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            margin-right: 10px;
-          }
-
-          .feed_time {
-            color: gray;
-            font-size: 12px;
-          }
-        }
-      }
-    }
-
-    .recommend {
-      height: 150px;
-      padding: 20px;
-      border: 1px rgb(219, 219, 219) solid;
-      background-color: white;
-      border-radius: 3px;
-      display: flex;
-      flex-direction: column;
-      overflow: scroll;
-      .recommend_nav {
-        color: gray;
-        margin-bottom: 5px;
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .recommend_feeds {
-        display: flex;
-        flex-direction: column;
-        .recommend_feed {
-          margin-bottom: 5px;
-          display: flex;
-          flex-direction: row;
-          .user_photo {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            margin-right: 10px;
-          }
-
-          .recommend_info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            .feed_time {
-              color: gray;
-              font-size: 12px;
-            }
-
-            .follow {
-              margin-left: 145px;
-              color: #0095f6;
-              font-size: 12px;
-            }
-
-            .follow:hover {
-              cursor: pointer;
-            }
-          }
-        }
-      }
-    }
-
-    .recommend::-webkit-scrollbar {
-      display: none;
-    }
 
     footer {
+      margin-top: 15px;
       color: rgb(219, 219, 219);
       font-size: 12px;
-      margin-top: 15px;
-    }
-  }
-
-  @media screen and (max-width: 1000px) {
-    .main_right {
-      display: none;
     }
   }
 }

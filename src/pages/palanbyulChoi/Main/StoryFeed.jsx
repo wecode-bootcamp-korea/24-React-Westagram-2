@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
+import './StoryFeed.scss';
+
 class StoryFeed extends Component {
   render() {
     const { imgSrc, userName } = this.props;
     return (
-      <div className="story_feed">
-        <div className="story_photo">
-          <img alt="wecoder_photo" className="user_photo" src={imgSrc} />
+      <div className="storyFeed">
+        <div className="storyPhoto">
+          <img alt="wecoderPhoto" className="userPhoto" src={imgSrc} />
         </div>
-        <div className="stoty_info">
+        <div className="stotyInfo">
           <div className="username">
             <strong>{userName}</strong>
           </div>
-          <div className="feed_time">1분 전</div>
+          <div className="feedTime">1분 전</div>
         </div>
       </div>
     );

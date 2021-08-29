@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+
 class Love extends Component {
   changeFeedLove = () => {
     this.props.changeFeedLove(this.props.feedId);
   };
+
   render() {
     return (
       <>
@@ -14,4 +16,5 @@ class Love extends Component {
     );
   }
 }
+
 export default Love;
