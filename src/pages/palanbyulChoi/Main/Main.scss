@@ -1,0 +1,65 @@
+.MainPalanbyul {
+  FontAwesomeIcon:hover {
+    cursor: pointer;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  main {
+    background-color: #fafafa;
+    padding: 100px 220px;
+    display: flex;
+
+    .feeds {
+      height: 100%;
+      width: 615px;
+      border-radius: 3px;
+      margin-right: 40px;
+    }
+
+    .mainRight {
+      display: flex;
+      flex-direction: column;
+      width: 325px;
+      position: fixed;
+      top: 100px;
+      @media screen and (max-width: 1000px) {
+        display: none;
+      }
+    }
+
+    .myProfile {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+      width: 325px;
+      margin-left: 20px;
+
+      .myPhoto img {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+      }
+
+      .myInfo {
+        padding: 10px;
+
+        .myName {
+          color: #8e8e8e;
+        }
+      }
+    }
+
+    footer {
+      margin-top: 15px;
+      color: rgb(219, 219, 219);
+      font-size: 12px;
+    }
+  }
+}

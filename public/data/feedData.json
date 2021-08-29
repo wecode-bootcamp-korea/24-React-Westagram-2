@@ -1,0 +1,102 @@
+[
+  {
+    "userName": "legokorea_official",
+    "userImg": "https://cphoto.asiae.co.kr/listimglink/6/2018032009525388630_1521507172.jpg",
+    "id": 1,
+    "src": "/images/palanbyulChoi/lego.jpeg",
+    "feedText": "안녕하세욥",
+    "isLiked": false,
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "Logan",
+        "comment": "Welcome to world best coding bootcamp!"
+      },
+      {
+        "id": 2,
+        "userName": "Emma",
+        "comment": "멋져요~!"
+      },
+      {
+        "id": 3,
+        "userName": "Daniel",
+        "comment": "😊"
+      }
+    ]
+  },
+  {
+    "userName": "cu_official",
+    "userImg": "https://play-lh.googleusercontent.com/EW-thSba5WQ8okOXCJ-HyQ5J8auWfNU4urcm_n1TYOPv965-1GluUCfh50FkMQ1RKGo",
+    "id": 2,
+    "src": "/images/palanbyulChoi/CU.jpeg",
+    "feedText": "안녕하세요!!",
+    "isLiked": false,
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "Sophia",
+        "comment": "안녕하세요 !"
+      },
+      {
+        "id": 2,
+        "userName": "Charlotte",
+        "comment": "😫"
+      },
+      {
+        "id": 3,
+        "userName": "Emerald",
+        "comment": "감사합니다"
+      }
+    ]
+  },
+  {
+    "userName": "lushkorea",
+    "userImg": "https://t1.daumcdn.net/cfile/tistory/9917EF33598D1E7A20",
+    "id": 3,
+    "src": "/images/palanbyulChoi/lush.jpeg",
+    "feedText": "반갑습니다",
+    "isLiked": false,
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "Aurora",
+        "comment": "good!"
+      },
+      {
+        "id": 2,
+        "userName": "Kakao",
+        "comment": "안녕하세요~"
+      },
+      {
+        "id": 3,
+        "userName": "Lan",
+        "comment": "🥵"
+      }
+    ]
+  },
+  {
+    "userName": "lushkorea",
+    "userImg": "https://t1.daumcdn.net/cfile/tistory/9917EF33598D1E7A20",
+    "id": 4,
+    "src": "/images/palanbyulChoi/lush_2.jpeg",
+    "feedText": "굿",
+    "isLiked": false,
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "chole",
+        "comment": "😵"
+      },
+      {
+        "id": 2,
+        "userName": "zoe",
+        "comment": "😺"
+      },
+      {
+        "id": 3,
+        "userName": "Aria",
+        "comment": "Hey."
+      }
+    ]
+  }
+]
