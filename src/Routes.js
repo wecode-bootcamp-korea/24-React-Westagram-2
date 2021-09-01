@@ -9,6 +9,7 @@ import MainCheoljin from './pages/cheoljinJu/Main/Main';
 
 import LoginEunjung from './pages/eunjungPark/Login/Login';
 import MainEunjung from './pages/eunjungPark/Main/Main';
+import SighUpEunjung from './pages/eunjungPark/SignUp/SignUp';
 
 import LoginPalanbyul from './pages/palanbyulChoi/Login/Login';
 import MainPalanbyul from './pages/palanbyulChoi/Main/Main';
@@ -24,6 +25,7 @@ class Routes extends React.Component {
           <Route exact path="/main-doyoung" component={MainDoyoung} />
           <Route exact path="/login-eunjung" component={LoginEunjung} />
           <Route exact path="/main-eunjung" component={MainEunjung} />
+          <Route exact path="/signup-eunjung" component={SighUpEunjung} />
           <Route exact path="/login-palanbyul" component={LoginPalanbyul} />
           <Route exact path="/main-palanbyul" component={MainPalanbyul} />
         </Switch>

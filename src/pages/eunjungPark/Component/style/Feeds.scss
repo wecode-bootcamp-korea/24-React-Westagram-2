@@ -1,0 +1,158 @@
+@import '../../../../styles/eunjungMixin.scss';
+
+.feeds {
+  width: 600px;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .article {
+    width: 580px;
+    background-color: white;
+    border: 1px solid #efefef;
+
+    .title {
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px 0 20px;
+
+      .title-left {
+        width: 150px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+        .feeds-profile {
+          @include feeds-profile;
+          img {
+            @include img-style;
+          }
+        }
+        .user-id {
+          font-weight: bold;
+        }
+      }
+      .title-right {
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .feeds-image {
+      width: 550px;
+      height: 500px;
+      margin: 10px auto;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .image-bottom {
+      width: 550px;
+      height: 30px;
+      margin: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .feeds-icon {
+        width: 150px;
+        margin-left: 20px;
+
+        img {
+          @include feeds-bottom-imgStyle;
+        }
+      }
+      .bookmark {
+        img {
+          @include feeds-bottom-imgStyle;
+        }
+      }
+    }
+
+    .comment-title {
+      width: 550px;
+      height: 30px;
+      margin: 0 auto;
+      display: inline-flex;
+      align-items: center;
+
+      .mine-profile {
+        display: inline-block;
+
+        img {
+          width: 25px;
+          height: 25px;
+          border: none;
+          border-radius: 50%;
+          margin: 5px 10px 0 15px;
+        }
+      }
+
+      .comment-tit {
+        display: inline-block;
+
+        .user-id {
+          font-weight: bold;
+        }
+
+        .bold {
+          font-weight: bold;
+
+          .like-number {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .art-comment {
+      width: 550px;
+      margin: 10px auto;
+
+      .comment-nth {
+        position: relative;
+        .user-id {
+          font-weight: bold;
+        }
+        .color-light {
+          color: #999999;
+          margin-left: 5px;
+        }
+      }
+    }
+
+    .comment-plus {
+      width: 100%;
+      height: 35px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      border: 1px solid #dfdfdf;
+
+      input {
+        width: 500px;
+        border: none;
+        outline: none;
+        margin-left: 20px;
+      }
+
+      .comment-btn {
+        border: none;
+        outline: none;
+        color: #c8e3fc;
+        margin-right: 20px;
+        background-color: white;
+      }
+    }
+  }
+}

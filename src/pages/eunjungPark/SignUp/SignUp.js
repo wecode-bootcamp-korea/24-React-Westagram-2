@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './Login.scss';
+import './SignUp.scss';
 
-class LoginEunjung extends Component {
+class SignUpEunjung extends Component {
   constructor() {
     super();
     this.state = {
@@ -23,41 +23,41 @@ class LoginEunjung extends Component {
     const checkPw = pw.length >= 4;
 
     if (checkId && checkPw) {
-      alert('입력성공');
-
-      fetch('http://10.58.3.176:8000/users/signin', {
-        method: 'POST',
-        body: JSON.stringify({
-          name: '이름',
-          email: this.state.id,
-          password: this.state.pw,
-          contact_mobile: '010-0000-0000',
-          nickname: 'AAA',
-          address: 'BBB',
-        }),
-      })
-        .then(response => response.json())
-        .then(response => {
-          if (response.message === 'SUCCESS') {
-            alert('로그인성공');
-            this.goToMain();
-          } else {
-            alert('로그인다시!');
-          }
-        });
+      alert('입력완료');
     } else {
       if (!checkId) {
         alert('아이디에는 @가 포함되어야 합니다.');
+        return;
       }
 
       if (!checkPw) {
         alert('비밀번호는 4자리 이상이어야 합니다.');
+        return;
       }
     }
+
+    fetch('http://10.58.3.176:8000/users/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        name: '이름',
+        email: this.state.id,
+        password: this.state.pw,
+        contact_mobile: '010-0000-0000',
+        nickname: 'AAA',
+        address: 'BBB',
+      }),
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response.message === 'SUCCESS') {
+          alert('회원가입성공');
+          this.goToLogin();
+        } else alert('회원가입다시!');
+      });
   };
 
-  goToMain = () => {
-    this.props.history.push('/main-eunjung');
+  goToLogin = () => {
+    this.props.history.push('/login-eunjung');
   };
 
   render() {
@@ -71,7 +71,7 @@ class LoginEunjung extends Component {
             <input
               id="login-id"
               type="text"
-              placeholder="전화번호, 사용자 이름 또는 이메일"
+              placeholder="이메일"
               name="id"
               onChange={this.handleInput}
             />
@@ -97,7 +97,7 @@ class LoginEunjung extends Component {
                     : true
                 }
               >
-                로그인
+                회원가입
               </button>
             </div>
             <footer className="foot-section">
@@ -112,4 +112,4 @@ class LoginEunjung extends Component {
   }
 }
 
-export default LoginEunjung;
+export default SignUpEunjung;
